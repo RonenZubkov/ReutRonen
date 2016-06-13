@@ -9,7 +9,6 @@ body {
 
 .content{
   display:flex;
-  // flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 10%;
@@ -31,9 +30,13 @@ img {
 header {
   padding: 5%;
   background-color: lightpink;
+  
   h1{
   color: black;
   }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .item{

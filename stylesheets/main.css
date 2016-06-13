@@ -6255,7 +6255,10 @@ img {
 
 header {
   padding: 5%;
-  background-color: lightpink; }
+  background-color: lightpink;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 header h1 {
   color: black; }
