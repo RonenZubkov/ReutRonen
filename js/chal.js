@@ -3,7 +3,7 @@ var gChals = [
     {
         id: 'game1.html',
         name: 'The Garden',
-        isSolved: false
+        isSolved: true
     },
     {
         id: 'game2.html',
@@ -24,17 +24,20 @@ var gChals = [
 
 function init(){
 
-    if(localStorage.getItem('Challenge'))gChals = getFromStorage('Challenge');
+    if(getFromStorage('Challenge')){
+        console.log('Exists');
+        gChals = getFromStorage('Challenge');
+        console.log(gChals);
+    }
 
-    console.log(gChals);
 }
 
 function getChals(value) {
 
-    console.log(gChals);
     for(var i = 0; i < value; i++){
         if(gChals[i].isSolved === false)return;
     }
+    // saveToStorage('Challenge',gChals);
     window.location.href = gChals[value].id;
 }
 
@@ -44,26 +47,15 @@ function getChals(value) {
 // function renderChals() {}
 
 function reportSolved(chalId){
-    // console.log('chalId: ',chalId);
 
     gChals[chalId].isSolved = true;
 
     saveToStorage('Challenge',gChals);
-
-    console.log(gChals[chalId].isSolved);
-
     window.location.href = 'index.html';
+    console.log(gChals);
+
 }
 
-// $(document).ready(function() {
-//
-//
-//     $('.a').on("click",console.log('clicked'));
-//
-//     $('.b').on("click");
-//
-//
-// });
 
 
 function saveToStorage(key, value) {
@@ -71,6 +63,5 @@ function saveToStorage(key, value) {
 }
 function getFromStorage(key) {
     var str = localStorage.getItem(key);
-    // console.log(str);
     return JSON.parse(str);
 }
