@@ -4,5 +4,39 @@
 
 body {
   background-color: wheat;
-  color: blue;
+  color: red;
+}
+
+.content{
+  display:flex;
+  // flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10%;
+  flex-wrap: wrap;
+
+  .chals {
+    border: 2px solid green;
+    padding: 3%;
+    position: relative;
+  }
+}
+
+img {
+    position: absolute; 
+    right: 0; top: 0;
+    width: 40%;
+}
+
+header {
+  padding: 5%;
+  background-color: lightpink;
+  h1{
+  color: black;
+  }
+}
+
+.item{
+  margin:5px;
+  border: 2px solid grey;
 }
