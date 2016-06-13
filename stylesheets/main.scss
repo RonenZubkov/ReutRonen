@@ -4,5 +4,17 @@
 
 body {
   background-color: wheat;
-  color: blue;
+  color: red;
+}
+
+.content{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item{
+  margin:5px;
+  border: 2px solid grey;
 }
