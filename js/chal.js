@@ -1,14 +1,18 @@
 
 var gChals;
 
-function init(){
+function init(){    
 
-    gChals = getChals();    
+    gChals = getChals();   
+    console.log('gChals', gChals);
+     
 
     renderChals(gChals, '.content');
 }
 
 function getChals() {
+    console.log('getChals');
+    
     if (localStorage.getItem('Challenges')) gChals = JSON.parse(localStorage.getItem('Challenges'));
     else gChals = [
         {
@@ -32,6 +36,8 @@ function getChals() {
             isSolved: false
         }
     ];
+
+    return gChals;
 
 }
 
@@ -57,7 +63,6 @@ function getImgIsSolved (chals, chalsId) {
   }
 
 function getChalById(chal, chalId) {
-    console.log('chal', chal, 'chalId', chalId);
     for(var i = 0; i < chalId; i++){
         if(gChals[i].isSolved === false) return;
     }
@@ -70,7 +75,7 @@ function reportSolved(chalId){
     
     gChals[chalId].isSolved = true;
 
-    saveToStorage('challenge',gChals);
+    saveToStorage('challenges',gChals);
     window.location.href = 'index.html';
     console.log(gChals);
 }
