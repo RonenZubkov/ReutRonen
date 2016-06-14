@@ -20,19 +20,18 @@
   }
 }
 
-a {
-img {
+.lock {
     position: absolute;
     right: 0; top: 0;
     width: 40%;
 }
-}
 
-header {
+
+.headerIndex {
   padding: 5%;
   background-color: lightpink;
 
-  h1{
+  h1 {
   color: black;
   }
   flex-direction: column;
