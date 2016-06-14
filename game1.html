@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>I like Coding</title>
-  <link rel="stylesheet" href="stylesheets/main2.css"/>
+  <link rel="stylesheet" href="stylesheets/main.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
-<body>
+<body onload="init()">
 <header class="box">
 
 </header>
@@ -16,15 +17,15 @@
     </main>
 </div>
 
-<p class="question1">Question1</p>
-<p class="question2">Question2</p>
-<p class="question2">Med,will be hidden.</p>
-<p class="question2">Hard,will be hidden.</p>
-<p>Each quest is described by an object with id, opts[], and correctOptIndex</p>
-<button class = "randomBtn1" onclick = "checkAnswer(this)">Yes</button>
-<button class = "randomBtn2" onclick = "checkAnswer()">No</button>
+
+<button onclick="lifeSaver()">Life Saver</button>
+<div class="frame"></div>
+
+<ul class="options">
+
+</ul>
 <footer>
-  cofferights &copy; 2016  
+  cofferights &copy; 2016
 </footer>
 
   <script src="lib/jquery/jquery.js"></script>

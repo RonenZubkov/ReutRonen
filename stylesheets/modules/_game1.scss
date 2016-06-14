@@ -1,3 +1,28 @@
+@import "../../lib/lib";
+
 .game1 {
-    
+
 }
+
+//body{
+//  background-color: red;
+//}
+
+.options{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .option{
+    border: 2px solid black;
+    margin: 15px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
