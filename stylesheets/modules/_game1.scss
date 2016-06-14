@@ -11,21 +11,44 @@
   height: 50px;
   background-color: #76EEC6;
   display:flex;
-  justify-content: space-between;
-  align-items: center;
+  //justify-content: space-between;
+  //align-items: center;
   flex-wrap: nowrap;
   margin-bottom: 0px;
   font-family:"Comic Sans MS";
   font-size: 12px;
+  border-radius: 8px;
+
 
   .nav{
+    display: flex;
     width:375px;
-    height: 50px;
     flex-wrap: nowrap;
     justify-content: space-between;
-    border-radius: 52px;
+    flex-direction:row;
 
+
+
+    .lifeSaver{
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+    }
+
+    .navRuler{
+      display: flex;
+      list-style-type: none;
+      justify-content: flex-start;
+      //flex-direction:row;
+
+
+      .navItem{
+        width: 50px;
+        font-size: 20px;
+      }
+    }
   }
+
+
 }
 
 .game1{
@@ -37,6 +60,8 @@
   background-color: #E7F3EF;
   font-family:"Comic Sans MS";
   font-size: 14px;
+  border-radius: 5px;
+
 
   .frame{
     order: 1;
@@ -92,6 +117,8 @@
   width: 375px;
   height:30px;
   background-color: #76EEC6;
+  border-radius: 8px;
+
 }
 
 @media screen and(max-width: 400px){

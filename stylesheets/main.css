@@ -12448,19 +12448,31 @@ button.close {
   height: 50px;
   background-color: #76EEC6;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: nowrap;
   margin-bottom: 0px;
   font-family: "Comic Sans MS";
-  font-size: 12px; }
+  font-size: 12px;
+  border-radius: 8px; }
 
 .box .nav {
+  display: flex;
   width: 375px;
-  height: 50px;
   flex-wrap: nowrap;
   justify-content: space-between;
-  border-radius: 52px; }
+  flex-direction: row; }
+
+.box .nav .lifeSaver {
+  flex-wrap: nowrap;
+  justify-content: flex-end; }
+
+.box .nav .navRuler {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-start; }
+
+.box .nav .navRuler .navItem {
+  width: 50px;
+  font-size: 20px; }
 
 .game1 {
   display: flex;
@@ -12470,7 +12482,8 @@ button.close {
   flex-wrap: wrap;
   background-color: #E7F3EF;
   font-family: "Comic Sans MS";
-  font-size: 14px; }
+  font-size: 14px;
+  border-radius: 5px; }
 
 .game1 .frame {
   order: 1;
@@ -12515,7 +12528,8 @@ button.close {
 .foot {
   width: 375px;
   height: 30px;
-  background-color: #76EEC6; }
+  background-color: #76EEC6;
+  border-radius: 8px; }
 
 .tableUpTo100 td {
   padding: 10px; }
