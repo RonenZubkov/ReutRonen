@@ -54,7 +54,7 @@ function renderChals(chals, selector) {
     var strHTMLs = chals.map(function (chal) {
         var strHtml = '<div onclick="return chalClicked(' + chal.id + ');" class="chal">' +
                         '<a href="game' + (chal.id + 1) + '.html">'
-                            +'<img src="'+getImgIsSolved(chals, chal.id) + '">' +
+                            +'<img src="'+getImgIsSolved(chals, chal.id) + '" class="lock">' +
                             '<h2>'+ chal.name +'</h2>' + 
                             '</a>' +
                         '</div>';

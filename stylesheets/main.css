@@ -12486,20 +12486,20 @@ button.close {
   padding: 3%;
   position: relative; }
 
-a img {
+.lock {
   position: absolute;
   right: 0;
   top: 0;
   width: 40%; }
 
-header {
+.headerIndex {
   padding: 5%;
   background-color: lightpink;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
 
-header h1 {
+.headerIndex h1 {
   color: black; }
 
 .item {
