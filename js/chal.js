@@ -87,8 +87,8 @@ function getImgIsSolved (chal, chalId) {
 
   function chalClicked (chalId) {
         var chelClicked = getChalById(chalId)
-        var currChal = getCurrChal(chalId);              
-        if (chelClicked.id === currChal.id) console.log('chelClicked.id', chelClicked.id, 'currChal.id', currChal.id);
+        var currChal = getCurrChal();              
+        if (chelClicked.id === currChal.id || chelClicked.isSolved) console.log('chelClicked.id', chelClicked.id, 'currChal.id', currChal.id);
         else return false;
   }
 
