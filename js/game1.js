@@ -17,7 +17,7 @@ var gQuestsTree = [
         id: 2,
         txt: 'Who painted the Mona Lisa?',
         opts:['a','Leonardo da Vinci','c','d'],
-        correctOpt: 2,
+        correctOpt: 1,
         lifeSave: true
     },
 
@@ -25,7 +25,7 @@ var gQuestsTree = [
         id: 3,
         txt: 'Who is the bear in The Jungle Book??',
         opts:['a','b','Baloo','d'],
-        correctOpt: 3,
+        correctOpt: 2,
         lifeSave: true
     }
 ];
@@ -33,14 +33,15 @@ var gQuestsTree = [
 
 function init(){
     renderQuest();
-    // console.log('Initied');
 }
 
 
 function renderQuest(){
     var elOptions = document.querySelector('.options');
     var elImg = document.querySelector('.frame');
-    elImg.innerHTML = '<img src="img/game1Img/pic'+ gQuestsTree[gCurrQuest].id + '.jpg" class="img-rounded img-responsive" alt="">';
+    elImg.innerHTML = '<img src="img/game1Img/pic'+ gQuestsTree[gCurrQuest].id + '.jpg" class="img-rounded display" alt="">';
+
+    var elQuest = $('.quest').html(gQuestsTree[gCurrQuest].txt);
 
 
     var strHtmls = gQuestsTree[gCurrQuest].opts.map(function (opt,i) {

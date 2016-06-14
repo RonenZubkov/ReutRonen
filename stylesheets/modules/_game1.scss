@@ -1,28 +1,83 @@
 @import "../../lib/lib";
 
-.game1 {
-
-}
-
 //body{
 //  background-color: red;
 //}
 
-.options{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 
-  .option{
-    border: 2px solid black;
-    margin: 15px;
-    width: 150px;
-    height: 150px;
+//iphone 6 	375 � 667//
+.box{
+  width:375px;
+  height: 50px;
+  background-color: #76EEC6;
+}
+
+.game1{
+  display:flex;
+  justify-content: center;
+  width:375px;
+  height: 587px;
+  flex-wrap: wrap;
+  background-color: #E7F3EF;
+  font-family:"Comic Sans MS";
+  font-size: 14px;
+
+  .frame{
+    order: 1;
+
+    width: 375px;
+    .display{
+      width: 373px;
+      border: 2px solid #55C3DC;
+      height: 265px;
+    }
+
+  }
+  .quest{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    width:350px;
+    order:2;
+    border: 2px solid #55C3DC;
+    height: 70px;
+    background-color: darkseagreen;
+    margin:8px;
+
+
+  }
+  .options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    order:3;
+    width: 375px;
+    height:300px;
+    padding: 25px;
+
+
+    .option{
+      border: 2px solid #55C3DC;
+      width: 150px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: darkseagreen;
+    }
+
   }
 
 }
 
+.foot{
+  width: 375px;
+  height:30px;
+  background-color: #76EEC6;
+}
+
+@media screen and(max-width: 400px){
+
+}
