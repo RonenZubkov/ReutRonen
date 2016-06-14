@@ -2,13 +2,39 @@
 @import "modules/app";
 
 
-body {
+.index {
   background-color: wheat;
-  color: red;
 }
 
 .content{
   display:flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10%;
+  flex-wrap: wrap;
+
+  .chal {
+    border: 2px solid green;
+    padding: 3%;
+    position: relative;
+  }
+}
+
+a {
+img {
+    position: absolute; 
+    right: 0; top: 0;
+    width: 40%;
+}
+}
+
+header {
+  padding: 5%;
+  background-color: lightpink;
+  
+  h1{
+  color: black;
+  }
   flex-direction: column;
   justify-content: center;
   align-items: center;

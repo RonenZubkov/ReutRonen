@@ -1,74 +1,120 @@
-//
-// var gChals = [
-//     {
-//         id: 'game1.html',
-//         name: 'The Garden',
-//         isSolved: true
-//     },
-//     {
-//         id: 'game2.html',
-//         name: 'The Forest',
-//         isSolved: false
-//     },
-//     {
-//         id: 'game3.html',
-//         name: 'The Beach',
-//         isSolved: false
-//     },
-//     {
-//         id: 'game4.html',
-//         name: 'Some thing else',
-//         isSolved: false
-//     }
-// ];
-//
-// localStorage.chals = JSON.stringify(gChals);
 
-var gChals = null;
+var gChals;
 
-function init(){
 
-    var chals = getFromStorage('challenge');
+function init(){    
 
-    if(chals){
-        console.log('Exists');
-        gChals = chals;
-        console.log(gChals);
-    }
-
+    gChals = getChals();   
+    console.log('gChals', gChals);
+     
+    renderChals(gChals, '.content');
 }
 
-function getChals() {
-    if (gChals === null) gChals = getFromStorage('chals');
+
+function getChals() {    
+    gChals = getFromStorage('chals');
+    
+    if ( gChals === null ) {
+        gChals = [
+            {
+                id: 0,
+                url: 'game1.html',
+                name: 'game1',
+                isSolved: false
+            },
+            {
+                id: 1,                
+                url: 'game2.html',
+                name: 'game2',
+                isSolved: false
+            },
+            {
+                id: 2,                
+                url: 'game3.html',
+                name: 'game3',
+                isSolved: false
+            },
+            {
+                id: 3,                
+                url: 'game4.html',
+                name: 'game4',
+                isSolved: false
+            }
+        ];
+    }    
+    saveToStorage('chals', gChals);    
     return gChals;
+
 }
 
 
-// function getChalById() {
-//
-//     gChals.filter(function(chals){
-//         return chals.id ===
-//     })
-//
-// }
+function renderChals(chals, selector) {
+  var elContainer = document.querySelector(selector);
 
-// function renderChals() {}
+    var strHTMLs = chals.map(function (chal) {
+        var strHtml = '<div onclick="return chalClicked(' + chal.id + ');" class="chal">' +
+                        '<a href="game' + (chal.id + 1) + '.html">'
+                            +'<img src="'+getImgIsSolved(chals, chal.id) + '">' +
+                            '<h2>'+ chal.name +'</h2>' + 
+                            '</a>' +
+                        '</div>';
+        
+        return strHtml;
+    })
+
+    elContainer.innerHTML = strHTMLs.join('');
+}
+
+
+function getImgIsSolved (chal, chalId) {
+    var imgSrc;
+      if (chal[chalId].isSolved === false) imgSrc = "img/img_index/lock.jpg";
+      else imgSrc = "img/img_index/V.png"
+      return imgSrc;
+  }
+
+
+  function getCurrChal () {
+      var currChal;
+      for (var i = 0; i < gChals.length; i++) {
+          if (!gChals[i].isSolved) {
+              currChal = gChals[i];
+              return currChal;
+          }
+      }
+  }
+
+
+  function chalClicked (chalId) {
+        var chelClicked = getChalById(chalId)
+        var currChal = getCurrChal(chalId);              
+        if (chelClicked.id === currChal.id) console.log('chelClicked.id', chelClicked.id, 'currChal.id', currChal.id);
+        else return false;
+  }
+
+
+function getChalById(chalId) {
+    return gChals[chalId]    
+}
+
 
 function reportSolved(chalId){
-
+    gChals = getFromStorage('chals');
+    
     gChals[chalId].isSolved = true;
 
-    saveToStorage('challenge',gChals);
+    saveToStorage('chals', gChals);
+    
+    //change the buttons to a href:
     window.location.href = 'index.html';
-    console.log(gChals);
-
 }
-
 
 
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
+
+
 function getFromStorage(key) {
     var str = localStorage.getItem(key);
     return JSON.parse(str);
