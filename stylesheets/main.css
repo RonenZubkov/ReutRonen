@@ -12461,6 +12461,13 @@ button.close {
 .tableUpTo100 td {
   padding: 10px; }
 
+.hidden {
+  background-color: red; }
+
+.num {
+  padding: 5px;
+  border: 2px solid black; }
+
 .bodyChal3 {
   background-color: white; }
 
