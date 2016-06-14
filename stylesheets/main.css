@@ -12443,20 +12443,79 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.options {
+.box {
+  width: 375px;
+  height: 50px;
+  background-color: #76EEC6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 0px;
+  font-family: "Comic Sans MS";
+  font-size: 12px; }
+
+.box .nav {
+  width: 375px;
+  height: 50px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border-radius: 52px; }
+
+.game1 {
+  display: flex;
+  justify-content: center;
+  width: 375px;
+  height: 587px;
+  flex-wrap: wrap;
+  background-color: #E7F3EF;
+  font-family: "Comic Sans MS";
+  font-size: 14px; }
+
+.game1 .frame {
+  order: 1;
+  width: 375px; }
+
+.game1 .frame .display {
+  width: 373px;
+  border: 2px solid #55C3DC;
+  height: 265px; }
+
+.game1 .quest {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 350px;
+  order: 2;
+  border: 2px solid #55C3DC;
+  height: 70px;
+  background-color: darkseagreen;
+  margin: 8px; }
+
+.game1 .options {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center; }
+  justify-content: space-between;
+  flex-wrap: wrap;
+  order: 3;
+  width: 375px;
+  height: 300px;
+  padding: 25px; }
 
-.options .option {
-  border: 2px solid black;
-  margin: 15px;
+.game1 .options .option {
+  border: 2px solid #55C3DC;
   width: 150px;
-  height: 150px;
+  height: 60px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-color: darkseagreen; }
+
+.foot {
+  width: 375px;
+  height: 30px;
+  background-color: #76EEC6; }
 
 .tableUpTo100 td {
   padding: 10px; }
