@@ -2,9 +2,8 @@
 @import "modules/app";
 
 
-body {
+.index {
   background-color: wheat;
-  color: red;
 }
 
 .content{
@@ -21,10 +20,12 @@ body {
   }
 }
 
+a {
 img {
     position: absolute; 
     right: 0; top: 0;
     width: 40%;
+}
 }
 
 header {

@@ -6231,9 +6231,21 @@ footer {
   text-align: center;
   color: #777; }
 
-body {
-  background-color: wheat;
-  color: red; }
+.bodyChal3 {
+  background-color: white; }
+
+.bodyChal3 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around; }
+
+.bodyChal3 .content img {
+  border: 2px solid black;
+  top: 50%;
+  left: 50%; }
+
+.index {
+  background-color: wheat; }
 
 .content {
   display: flex;
@@ -6247,7 +6259,7 @@ body {
   padding: 3%;
   position: relative; }
 
-img {
+a img {
   position: absolute;
   right: 0;
   top: 0;
