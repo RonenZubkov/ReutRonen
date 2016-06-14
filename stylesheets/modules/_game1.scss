@@ -10,6 +10,22 @@
   width:375px;
   height: 50px;
   background-color: #76EEC6;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 0px;
+  font-family:"Comic Sans MS";
+  font-size: 12px;
+
+  .nav{
+    width:375px;
+    height: 50px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-radius: 52px;
+
+  }
 }
 
 .game1{
