@@ -12537,9 +12537,9 @@ button.close {
 .hidden {
   background-color: red; }
 
-.num {
+#boxA {
   padding: 5px;
-  border: 2px solid black; }
+  width: 5px; }
 
 .bodyChal3 {
   background-color: white; }
