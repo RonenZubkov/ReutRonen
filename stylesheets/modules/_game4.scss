@@ -1,0 +1,39 @@
+
+//iphone 6 	375 � 667//
+.game4{
+    width: 375px;
+    //max-width: 375px;
+    height:587px;
+    .objFrame{
+        background: url("");
+        //display:flex;
+
+        .flower {
+            width: 50px;
+            height: 75px;
+            //background-color: #00b3ee;
+
+        }
+
+        .flower1{
+
+        }
+
+    }
+
+    .answers{
+        display:flex;
+        justify-content: space-around;
+
+
+        .answer{
+            list-style-type: none;
+            padding: 10px;
+            border: 2px solid red;
+            width: 150px;
+            //align-content: center;
+
+        }
+    }
+}
+
