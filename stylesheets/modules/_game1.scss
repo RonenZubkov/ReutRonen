@@ -1,8 +1,4 @@
-@import "../../lib/lib";
-
-//body{
-//  background-color: red;
-//}
+//@import "../../lib/lib";
 
 
 //iphone 6 	375 � 667//
@@ -11,8 +7,6 @@
   height: 50px;
   background-color: #76EEC6;
   display:flex;
-  //justify-content: space-between;
-  //align-items: center;
   flex-wrap: nowrap;
   margin-bottom: 0px;
   font-family:"Comic Sans MS";
@@ -38,7 +32,6 @@
       display: flex;
       list-style-type: none;
       justify-content: flex-start;
-      //flex-direction:row;
 
 
       .navItem{
@@ -114,13 +107,20 @@
 }
 
 .foot{
+  display:flex;
   width: 375px;
   height:30px;
   background-color: #76EEC6;
   border-radius: 8px;
+  justify-content: center;
 
 }
+
 
 @media screen and(max-width: 400px){
 
 }
+
+
+
+
