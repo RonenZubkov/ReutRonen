@@ -9,11 +9,15 @@
 
 <body onload="initGame2()">
 
-  <div class = "theHiddensContainer"></div>  
+  <div ondragenter="return dragEnter(event)"
+     ondrop="return dragDrop(event)" 
+     ondragover="return dragOver(event)" class = "theHiddensContainer"></div>  
 
     <table border="1px" class="tableUpTo100">
 
-  <tr class="tr_0">
+  <tr ondragenter="return dragEnter(event)"
+     ondrop="return dragDrop(event)" 
+     ondragover="return dragOver(event)" class="tr_0">
     <td class="td_0_0">1</td>
     <td class="td_0_1">2</td>
     <td class="td_0_2">3</td>
