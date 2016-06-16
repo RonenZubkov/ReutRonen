@@ -10,18 +10,19 @@ var gLevels = [
 ]
 var gState = {
     currLevel: 0,
-    // indexOfHidingNums: 0,
-    // dragged: 0,
-    // target: 0,
 }
 
 function initGame2() {
+    // checking in local storage if isSolved: 
+    gChals = getChals(); 
+    
+    
+      
     gBoard = buildBoard(gLevels[gState.currLevel].boardSize);
     console.table(gBoard);
     renderBoard(gBoard, '.row')
     hideNum();
     renderTheHiddens();
-    // checkStageComplited();
 }
 
 function buildBoard (SIZE) {
@@ -38,8 +39,10 @@ function buildBoard (SIZE) {
   var elContainer = document.querySelector(selector);
 
     var strHTMLs = board.map(function (chal, i) {
-        var strHtml = '<div id="div'+i+'" ondrop="drop(event)" ondragover="allowDrop(event)" class="cell cell_'+i+'">' + i + '</div>'
+        var strHtml = '<div id="droppable" class="droppable cell cell_' + i + '" data-type="'+i+'">' + i + '</div>'
+        // " ondrop="drop(event)" ondragover="allowDrop(event)" 
         return strHtml;
+        
     })
 
     elContainer.innerHTML = strHTMLs.join('');
@@ -63,48 +66,54 @@ function renderTheHiddens() {
     var strHtml = '';
     for (var i = 0; i < gLevels[gState.currLevel].numsToHide.length; i++) {
         console.log(gLevels[gState.currLevel].numsToHide[i])
-        strHtml += '<div id="'+i+'" draggable="true" ondragstart="drag(event)" class="drag num_' + i + '">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'
+        strHtml += '<div id="draggable" class="draggable drag num_' + i + '" data-type="'+i+'">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'
+        // +'draggable="true" ondragstart="drag(event)"'        
     }
       var elContainer = document.querySelector('.theHiddensContainer');
         elContainer.innerHTML = strHtml;
+        $('.draggable').draggable({ revert:true })
+        $('.droppable').droppable(
+            { accept: '.cell' }
+        );     
 }
 
 
-function allowDrop(ev) {
-    ev.preventDefault();
-    gState.target = ev.target.innerText
-}
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-    gState.dragged = ev.target.innerHTML;
-}
+// function allowDrop(ev) {
+//     ev.preventDefault();
+//     gState.target = ev.target.innerText
+// }
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    if (gState.dragged === gState.target) {
-    console.log(gState.dragged, gState.target)
-    ev.target.replaceChild(document.getElementById(data), document.getElementById(ev.dataTransfer.getData("text")));
-    ev.target.style.color = 'black';
-    var elContainer = document.querySelector('.theHiddensContainer');        
-    var elHidden = document.getElementById(data)
-    console.log('elHidden', elHidden)
-    elContainer.removeChild(elHidden);
-    checkStageComplited()
-    }
+// function drag(ev) {
+//     ev.dataTransfer.setData("text", ev.target.id);
+//     gState.dragged = ev.target.innerHTML;
+// }
+
+// function drop(ev) {
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text");
+//     if (gState.dragged === gState.target) {
+//     console.log(gState.dragged, gState.target)
+//     ev.target.replaceChild(document.getElementById(data), document.getElementById(ev.dataTransfer.getData("text")));
+//     ev.target.style.color = 'black';
+//     var elContainer = document.querySelector('.theHiddensContainer');        
+//     var elHidden = document.getElementById(data)
+//     console.log('elHidden', elHidden)
+//     elContainer.removeChild(elHidden);
+//     checkStageComplited()
+//     }
     
-}
+// }
 
 
 function checkStageComplited() {
-      var elContainer = document.querySelector('.theHiddensContainer');    
-      console.log(elContainer)
+    var elContainer = document.querySelector('.theHiddensContainer');    
+    // console.log(elContainer)
     if (elContainer.innerHTML === '') {
-    console.log('!')
-    gState.currLevel++;
-    var elBottun = document.querySelector('.buttonContainer');
-    elBottun.style.display = 'block'
+        console.log('!')
+        gState.currLevel++;
+        var elBottun = document.querySelector('.buttonContainer');
+        elBottun.style.display = 'block'
     // initGame2()
     }
     
