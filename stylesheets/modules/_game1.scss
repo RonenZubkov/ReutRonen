@@ -67,7 +67,7 @@
     }
 
   }
-  .quest{
+  .questDis{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -81,7 +81,7 @@
 
 
   }
-  .options{
+  .quests{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -92,7 +92,7 @@
     padding: 25px;
 
 
-    .option{
+    .quest{
       border: 2px solid #55C3DC;
       width: 150px;
       height: 60px;

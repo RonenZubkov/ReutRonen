@@ -4,8 +4,7 @@ var gChals;
 
 function init(){    
 
-    gChals = getChals();   
-    console.log('gChals', gChals);
+    gChals = getChals();
      
     renderChals(gChals, '.content');
 }
@@ -65,7 +64,7 @@ function renderChals(chals, selector) {
 function getImgIsSolved (chal, chalId) {
     var imgSrc;
       if (chal[chalId].isSolved === false) imgSrc = "img/img_index/lock.jpg";
-      else imgSrc = "img/img_index/V.png"
+      else imgSrc = "img/img_index/V.png";
       return imgSrc;
   }
 
@@ -82,7 +81,7 @@ function getImgIsSolved (chal, chalId) {
 
 
   function chalClicked (chalId) {
-        var chelClicked = getChalById(chalId)
+        var chelClicked = getChalById(chalId);
         var currChal = getCurrChal();              
         if (chelClicked.id === currChal.id || chelClicked.isSolved) console.log('chelClicked.id', chelClicked.id, 'currChal.id', currChal.id);
         else return false;

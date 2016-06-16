@@ -4,7 +4,7 @@
 'use strict';
 
 var gCurrQuest = 0;
-var gQuestsTree = [
+var gQuests = [
     {
         id: 1,
         txt: 'Who was created by Gepetto the woodcarver??',
@@ -25,7 +25,7 @@ var gQuestsTree = [
         id: 3,
         txt: 'Who is the bear in The Jungle Book??',
         opts:['a','b','Baloo','d'],
-        correctOpt: 2,
+        correctOpt:2,
         lifeSave: true
     }
 ];
@@ -37,26 +37,26 @@ function init(){
 
 
 function renderQuest(){
-    var elOptions = document.querySelector('.options');
+    var elQuests = document.querySelector('.quests');
+    var $elQuest = $('.questDis').html(gQuests[gCurrQuest].txt);
+
     var elImg = document.querySelector('.frame');
-    elImg.innerHTML = '<img src="img/game1Img/pic'+ gQuestsTree[gCurrQuest].id + '.jpg" class="img-rounded display" alt="">';
-
-    var elQuest = $('.quest').html(gQuestsTree[gCurrQuest].txt);
+    elImg.innerHTML = '<img src="img/game1Img/pic'+ gQuests[gCurrQuest].id + '.jpg" class="img-rounded display" alt="">';
 
 
-    var strHtmls = gQuestsTree[gCurrQuest].opts.map(function (opt,i) {
-        var strHtml = '<li class="option" onclick="checkOpt('+i+')">' + opt + '</li>';
+    var strHtmls = gQuests[gCurrQuest].opts.map(function (opt, i) {
+        var strHtml = '<li class="quest" onclick="checkOpt('+i+')">' + opt + '</li>';
         return strHtml;
     });
 
-    elOptions.innerHTML = strHtmls.join('');
+    elQuests.innerHTML = strHtmls.join('');
 }
 
 
 function checkOpt(i){
 
 
-    if(i === gQuestsTree[gCurrQuest].correctOpt){
+    if(i === gQuests[gCurrQuest].correctOpt){
         alert('Correct!');
         gCurrQuest++;
         renderQuest();
@@ -85,9 +85,9 @@ function gameOver(){
 function lifeSaver(){
     var min = 0;
     var max = 4;
-    var currQuest = gQuestsTree[gCurrQuest];
+    var currQuest = gQuests[gCurrQuest];
 
-    if(gQuestsTree[gCurrQuest].lifeSave) {
+    if(gQuests[gCurrQuest].lifeSave) {
         var randNum1 = getRandomIntInclusive(min, max);
         var randNum2 = getRandomIntInclusive(min, max);
 
