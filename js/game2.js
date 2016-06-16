@@ -34,7 +34,7 @@ function renderBoard(board, selector) {
     var elContainer = document.querySelector(selector);
  
     var strHTMLs = board.map(function (chal, i) {
-        var strHtml = '<div id="droppable_'+i+'" class="droppable_'+i+' cell cell_' + i + '" data-type="'+i+'">' + i + '</div>'
+        var strHtml = '<div id="droppable_'+i+'" class="droppable droppable_'+i+' cell cell_' + i + '" data-type="'+i+'">' + i + '</div>'
         return strHtml;
         
     })
@@ -61,8 +61,11 @@ function renderTheHiddens() {
     }
     var elContainer = document.querySelector('.theHiddensContainer');
     elContainer.innerHTML = strHtml;
+        
     $(function() {
-        $(".draggable").draggable({
+        // console.log(counter++)
+            var counter = 0;
+        $('.draggable').draggable({
             revert: "invalid",
             start: function(event, ui) {
                 $(this).fadeTo('fast', 0.5);
@@ -72,27 +75,23 @@ function renderTheHiddens() {
             }
         });
        
-        $(".droppable_4").droppable({
-            accept: ".draggable_0",
+        $('.droppable').droppable({
+            accept: function(e){
+                return e.text() === $(this).text();
+            },
+            drop: function(e) {
+                counter++;
+                if (gLevels[gState.currLevel].numsToHide.length === counter) {
+                    // alert('!')
+                    gState.currLevel++;
+                    $('.buttonContainer').css('display', 'block')                    
+                };
+            }
         });
     });
 }
 
- 
-
-function checkLevelComplited() {
-    var elContainer = document.querySelector('.theHiddensContainer');    
-    // console.log(elContainer)
-    if (elContainer.innerHTML === '') {
-        console.log('!')
-        gState.currLevel++;
-        var elBottun = document.querySelector('.buttonContainer');
-        elBottun.style.display = 'block'
-    // initGame2()
-    }
-    
-}
-    
+  
 
 
 

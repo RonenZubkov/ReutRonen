@@ -1,6 +1,12 @@
 @import "../lib/lib";
 @import "modules/app";
 
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('../font/KBZipaDeeDooDah.ttf') format('woff2'),
+        // url('myfont.woff') format('woff');
+}
+
 //iphone 6 	375 � 667//
 .index {
   background-color: whitesmoke;
@@ -46,13 +52,13 @@
     justify-content: center;
     
       a {
-        font-family: 'Raleway', sans-serif;
-        font-weight: 700;
+        font-family: MyWebFont;
+        // font-weight: 700;
         font-size: 7vw;
         
         letter-spacing: 0.2em;
         color:  white;
-        -webkit-text-stroke-color: darkblue;
+        // -webkit-text-stroke-color: darkblue;
         -webkit-text-stroke-width: 0.03em
       }
   }

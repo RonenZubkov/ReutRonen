@@ -6494,6 +6494,10 @@ footer {
 .gameContainer .row .quset {
   border: 1px solid black; }
 
+@font-face {
+  font-family: 'MyWebFont';
+  src: url("../font/KBZipaDeeDooDah.ttf") format("woff2"); }
+
 .index {
   background-color: whitesmoke; }
 
@@ -6529,12 +6533,10 @@ footer {
   justify-content: center; }
 
 .headerIndex .headline a {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-family: MyWebFont;
   font-size: 7vw;
   letter-spacing: 0.2em;
   color: white;
-  -webkit-text-stroke-color: darkblue;
   -webkit-text-stroke-width: 0.03em; }
 
 .headerIndex .ulContainer {
