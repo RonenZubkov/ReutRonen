@@ -6232,8 +6232,11 @@ footer {
   color: #777; }
 
 .game4 {
+  background: url("../../img/game4Img/background.jpg");
+  background-repeat: no-repeat;
   width: 375px;
   height: 587px; }
+<<<<<<< HEAD
 
 .game4 .objFrame {
   background: url("imggame4Img஬kground.jpg"); }
@@ -6251,6 +6254,93 @@ footer {
   padding: 10px;
   border: 2px solid red;
   width: 150px; }
+=======
+  .game4 .objFrame {
+    height: 487px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .game4 .objFrame .objectBox {
+      width: 50px;
+      height: 75px; }
+    .game4 .objFrame .flower1 {
+      margin: 140px 30px 0 15px;
+      width: 40px;
+      height: 40px; }
+    .game4 .objFrame .flower2 {
+      margin: 170px 20px 0 0;
+      width: 45px;
+      height: 45px; }
+    .game4 .objFrame .flower3 {
+      width: 85px;
+      height: 85px;
+      margin: 290px 30px 0 0; }
+    .game4 .objFrame .flower4 {
+      margin: 180px 30px 0 0;
+      height: 70px;
+      width: 70px; }
+    .game4 .objFrame .bird1 {
+      position: relative;
+      padding-top: 25px;
+      animation: fly 7s;
+      animation-direction: alternate; }
+    .game4 .objFrame .bird2 {
+      padding-top: 25px;
+      animation: fly 7s;
+      animation-direction: alternate; }
+    .game4 .objFrame .bird3 {
+      padding-top: 25px;
+      animation: fly 7s;
+      animation-direction: alternate; }
+    .game4 .objFrame .tree1 {
+      margin: 30% 0 0 0; }
+    .game4 .objFrame .tree2 {
+      margin: 60% 0 0 0; }
+    .game4 .objFrame .tree3 {
+      margin: 30% 0 0 0; }
+    .game4 .objFrame .tree4 {
+      margin: 45% 0 0 0;
+      width: 20%;
+      height: 30%; }
+    .game4 .objFrame .tree5 {
+      margin: 70% 0 0 0;
+      width: 80px;
+      height: 120px; }
+  .game4 .answers {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    padding: 0px; }
+    .game4 .answers .answer {
+      list-style-type: none;
+      padding: 10px;
+      border: 2px solid red;
+      width: 150px; }
+>>>>>>> 5f2175ab6a38013554637c4cd5f2b28cc8cf93ab
+
+@keyframes fly {
+  0% {
+    right: 5px; }
+  25% {
+    right: 10px; }
+  50% {
+    right: 25px; }
+  75% {
+    right: 70px; }
+  100% {
+    right: 150px; } }
+
+@keyframes fly {
+  0% {
+    right: 5px; }
+  25% {
+    right: 10px; }
+  50% {
+    right: 25px; }
+  75% {
+    right: 70px; }
+  100% {
+    right: 150px; } }
 
 .box {
   width: 375px;
@@ -6358,11 +6448,10 @@ footer {
   margin: 5%;
   margin-top: 0%;
   flex-wrap: wrap; }
-
-.row div {
-  font-size: 2rem;
-  margin: 3%;
-  padding: 5%; }
+  .row div {
+    font-size: 2rem;
+    margin: 3%;
+    padding: 5%; }
 
 .theHiddensContainer {
   display: flex;
@@ -6370,10 +6459,9 @@ footer {
   align-items: center;
   padding: 5%;
   flex-wrap: wrap; }
-
-.theHiddensContainer div {
-  margin: 5%;
-  font-size: 2rem; }
+  .theHiddensContainer div {
+    margin: 5%;
+    font-size: 2rem; }
 
 .buttonContainer {
   border: 2px solid black;
