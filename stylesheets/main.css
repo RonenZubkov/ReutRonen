@@ -6429,7 +6429,7 @@ footer {
   justify-content: center; }
 
 .bodyGame2 {
-  background-image: url("../../img/img_game_2/background.jpg"); }
+  background-image: url("../../img/img_game_2/background.png"); }
 
 .drag {
   border: 0.5px solid black;
@@ -6534,10 +6534,9 @@ footer {
 
 .headerIndex .headline a {
   font-family: MyWebFont;
-  font-size: 7vw;
+  font-size: 10vw;
   letter-spacing: 0.2em;
-  color: white;
-  -webkit-text-stroke-width: 0.03em; }
+  color: white; }
 
 .headerIndex .ulContainer {
   display: flex;
