@@ -46,7 +46,7 @@ function renderObjs(){
     var elObjFrame = document.querySelector('.objFrame');
     var counter = 1;
 
-    // var $elQuestion = $('.question').html(gQuestsTree[gCurrQuest].txt);
+    // var $elQuestion = $('.question').html(gQuests[gCurrQuest].txt);
 
 
     var strHtmls = gStages[gStageNow].answers.map(function (answer,i) {
