@@ -13,15 +13,12 @@ var gState = {
 }
 
 function initGame2() {
-    // checking in local storage if isSolved: 
-    gChals = getChals(); 
-    
-    
+    // **TODO: checking in local storage if gChals[1].isSolved         
       
     gBoard = buildBoard(gLevels[gState.currLevel].boardSize);
     console.table(gBoard);
     renderBoard(gBoard, '.row')
-    hideNum();
+    hideNums();
     renderTheHiddens();
 }
 
@@ -29,17 +26,15 @@ function buildBoard (SIZE) {
   var board = [];
     for (var i = 0; i < SIZE; i++) {
         board.push(i);
-        console.log(board)
     }
     return board;
 }
 
-// function renderBoard(board) {
-    function renderBoard(board, selector) {
-  var elContainer = document.querySelector(selector);
+function renderBoard(board, selector) {
+    var elContainer = document.querySelector(selector);
 
     var strHTMLs = board.map(function (chal, i) {
-        var strHtml = '<div id="droppable" class="droppable cell cell_' + i + '" data-type="'+i+'">' + i + '</div>'
+        var strHtml = '<div id="droppable_'+i+'" class="droppable cell cell_' + i + '" data-type="'+i+'">' + i + '</div>'
         // " ondrop="drop(event)" ondragover="allowDrop(event)" 
         return strHtml;
         
@@ -48,34 +43,80 @@ function buildBoard (SIZE) {
     elContainer.innerHTML = strHTMLs.join('');
 }
 
-function hideNum() {
-    var indexOfHidingNumsByRow = gLevels[gState.currLevel].numsToHide;
-    console.log(indexOfHidingNumsByRow)
-    for (var i = 0; i < indexOfHidingNumsByRow.length; i++) {
-        console.log(indexOfHidingNumsByRow[i])
-        var elCell = document.querySelector('.cell_'+indexOfHidingNumsByRow[i]);      
+function hideNums() {
+    var numsToHide = gLevels[gState.currLevel].numsToHide;
+    for (var i = 0; i < numsToHide.length; i++) {
+        var elCell = document.querySelector('.cell_'+numsToHide[i]);  
+        //TODO: create a class + clean innerText    
         elCell.style.color = 'white';
-        console.log(elCell)
    }
-//    return indexOfHidingNumsByRow[currRow];
 }
 
 function renderTheHiddens() {
     
-    //map?
+    // **TODO: map?
     var strHtml = '';
     for (var i = 0; i < gLevels[gState.currLevel].numsToHide.length; i++) {
         console.log(gLevels[gState.currLevel].numsToHide[i])
-        strHtml += '<div id="draggable" class="draggable drag num_' + i + '" data-type="'+i+'">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'
+        strHtml += '<div id="draggable" class="draggable draggable_'+i+' drag num_' + i + '" data-type="'+i+'">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'
         // +'draggable="true" ondragstart="drag(event)"'        
     }
+        console.log(strHtml)
       var elContainer = document.querySelector('.theHiddensContainer');
         elContainer.innerHTML = strHtml;
-        $('.draggable').draggable({ revert:true })
-        $('.droppable').droppable(
-            { accept: '.cell' }
-        );     
+        // $('.draggable').draggable({ revert:true })
+        // $('.droppable').droppable(
+        //     { accept: '.cell' }
+        // );     
+        // console.log('drop')
+    $(function() {
+        $(".draggable").draggable({
+            revert: true,
+            helper: 'clone',
+            start: function(event, ui) {
+                $(this).fadeTo('fast', 0.5);
+            },
+            stop: function(event, ui) {
+                $(this).fadeTo(0, 1);
+            }
+        });
+        
+        console.log($("#droppable_4"))
+        console.log( document.querySelector('.draggable_0'))
+       
+        $("#droppable_4").droppable(
+            {
+            accept: ".draggable_0",
+            // tolerance:"touch",
+            drop: drop()
+        });
+        
+        function drop () {
+        console.log("hello");
+    }
+        // $("#droppable").droppable({
+        //     accept: '.cell',
+        //     hoverClass: 'active',
+        //     drop: function(event, ui) {
+        //         console.log(event)
+        //         this.value = $(ui.draggable).text();
+        //         this.css('color', 'red')
+        //     }
+        // });
+    });
 }
+
+    
+    // $(".droppable_1").droppable({
+	// 	accept: ".word2"
+    // });
+    
+    // $(".droppable_1").droppable({
+	// 	accept: ".word3"
+    // });
+    
+// });
+
 
 
 
@@ -106,7 +147,7 @@ function renderTheHiddens() {
 // }
 
 
-function checkStageComplited() {
+function checkLevelComplited() {
     var elContainer = document.querySelector('.theHiddensContainer');    
     // console.log(elContainer)
     if (elContainer.innerHTML === '') {

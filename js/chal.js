@@ -18,25 +18,21 @@ function getChals() {
         gChals = [
             {
                 id: 0,
-                url: 'game1.html',
                 name: 'game1',
                 isSolved: false
             },
             {
                 id: 1,                
-                url: 'game2.html',
                 name: 'game2',
                 isSolved: false
             },
             {
                 id: 2,                
-                url: 'game3.html',
                 name: 'game3',
                 isSolved: false
             },
             {
                 id: 3,                
-                url: 'game4.html',
                 name: 'game4',
                 isSolved: false
             }
