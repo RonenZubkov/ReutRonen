@@ -19,13 +19,13 @@
 //   top: 0px;
 margin-top: 0%;
   flex-wrap: wrap;
-    div {
+    .cell {
     font-size: 1.5rem;    
     margin:  3%;
     padding: 5%;
     border: 0.5px solid black;
    background-color:  antiquewhite;
-   width:35px;height:35px;
+//    width:35px;height:35px;
     }  
 }
 
