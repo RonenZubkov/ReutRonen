@@ -1,24 +1,51 @@
-
-.tableUpTo100 {
-    // background-color: forestgreen;
-    td{
-    padding: 10px;
-    }
+.cell {
+    border: 2px solid black;
+    padding: 5%;
 }
 
-.hidden {
-    background-color: red;
+.drag {
+    border: 2px solid black;
+    padding: 5%;
+    // margin:  5%;
+    
 }
 
-.num {
-
+.row {  
+ display:flex;
+  align-items: center;
+  padding: 5%;
+  margin:  5%;
+//   top: 0px;
+margin-top: 0%;
+  flex-wrap: wrap;
+    div {
+    font-size: 2rem;    
+    margin:  3%;
+    padding: 5%;
+    }  
 }
 
-#boxA {
-        padding: 5px;
-    // border: 2px solid black;
-    width: 5px;
+.theHiddensContainer {
+     display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+//   margin:  5%;
+  flex-wrap: wrap;
+  div {
+  margin:  5%;
+    font-size: 2rem;    
+      
+  }
 }
 
-
-
+ .buttonContainer {
+    border: 2px solid black;
+    font-family: 'Kanit', sans-serif;
+    background-color: lightgrey;    
+    opacity: 0.95;
+    color: dimgray;
+    padding: 50px;   
+    top: 170px; left: 50%; width: 400px; margin-left: -200px;
+    position: absolute;
+  }

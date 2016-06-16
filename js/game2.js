@@ -1,83 +1,116 @@
 'use strict';
 
 var gBoard;
+var gLevels = [
+            {
+                levelId: 0,
+                boardSize: 10,
+                numsToHide: [4,7],
+            }
+]
 var gState = {
-    currRow: 0,
+    currLevel: 0,
+    // indexOfHidingNums: 0,
+    // dragged: 0,
+    // target: 0,
 }
 
 function initGame2() {
-    gBoard = buildBoard();
+    gBoard = buildBoard(gLevels[gState.currLevel].boardSize);
     console.table(gBoard);
-    var ranNums = hideRandomNum(gState.currRow, 2);
-    renderTheHiddens(gState.currRow, ranNums);
-    
+    renderBoard(gBoard, '.row')
+    hideNum();
+    renderTheHiddens();
+    // checkStageComplited();
 }
 
-function buildBoard () {
-  var SIZE = 10;  
+function buildBoard (SIZE) {
   var board = [];
     for (var i = 0; i < SIZE; i++) {
-        board.push([]);
-        for (var j = 0; j < SIZE; j++) {
-            board[i][j] = (j + 1) + (10 * i)
-        }
+        board.push(i);
+        console.log(board)
     }
     return board;
 }
 
-function hideRandomNum(row, amount) {
-    var ranNums = [];
-    for (var i = 0; i < amount; i++) {
-        var ranNum = parseInt(Math.random() * 10);
-        ranNums.push(ranNum);
-        console.log('ranNums', ranNums);
-    }
-    for (var i = 0; i < ranNums.length; i++) {
-        //updating the model:
-    //    gBoard[row][ranNums[i]] = null;
-        //updating the DOM:
-        var elCell = document.querySelector('.td_'+row+'_'+ranNums[i]);
-        elCell.addEventListener("drop_handler(event)", ondrop, false)
-        elCell.style.color = 'white';
-        console.log(elCell);
-        
-   }
+// function renderBoard(board) {
+    function renderBoard(board, selector) {
+  var elContainer = document.querySelector(selector);
 
-   return ranNums;
-    
+    var strHTMLs = board.map(function (chal, i) {
+        var strHtml = '<div id="div'+i+'" ondrop="drop(event)" ondragover="allowDrop(event)" class="cell cell_'+i+'">' + i + '</div>'
+        return strHtml;
+    })
+
+    elContainer.innerHTML = strHTMLs.join('');
 }
 
-function renderTheHiddens(row, ranNums) {
-    
-    var strHtml = '';
-    for (var i = 0; i < ranNums.length; i++) {
-        strHtml += '<div id="boxA" draggable="true" ondragstart="return dragStart(event)" class="drag num num_' + i + '">' + gBoard[row][ranNums[i]] + '</div>'
-    }
+function hideNum() {
+    var indexOfHidingNumsByRow = gLevels[gState.currLevel].numsToHide;
+    console.log(indexOfHidingNumsByRow)
+    for (var i = 0; i < indexOfHidingNumsByRow.length; i++) {
+        console.log(indexOfHidingNumsByRow[i])
+        var elCell = document.querySelector('.cell_'+indexOfHidingNumsByRow[i]);      
+        elCell.style.color = 'white';
+        console.log(elCell)
+   }
+//    return indexOfHidingNumsByRow[currRow];
+}
 
+function renderTheHiddens() {
+    
+    //map?
+    var strHtml = '';
+    for (var i = 0; i < gLevels[gState.currLevel].numsToHide.length; i++) {
+        console.log(gLevels[gState.currLevel].numsToHide[i])
+        strHtml += '<div id="'+i+'" draggable="true" ondragstart="drag(event)" class="drag num_' + i + '">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'
+    }
       var elContainer = document.querySelector('.theHiddensContainer');
         elContainer.innerHTML = strHtml;
 }
 
-function dragStart(ev) {
-   ev.dataTransfer.effectAllowed='move';
-   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
-   ev.dataTransfer.setDragImage(ev.target,100,100);
-   return true;
+
+function allowDrop(ev) {
+    ev.preventDefault();
+    gState.target = ev.target.innerText
 }
-function dragEnter(ev) {
-   event.preventDefault();
-   return true;
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+    gState.dragged = ev.target.innerHTML;
 }
-function dragOver(ev) {
-     event.preventDefault();
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    if (gState.dragged === gState.target) {
+    console.log(gState.dragged, gState.target)
+    ev.target.replaceChild(document.getElementById(data), document.getElementById(ev.dataTransfer.getData("text")));
+    ev.target.style.color = 'black';
+    var elContainer = document.querySelector('.theHiddensContainer');        
+    var elHidden = document.getElementById(data)
+    console.log('elHidden', elHidden)
+    elContainer.removeChild(elHidden);
+    checkStageComplited()
+    }
+    
 }
-function dragDrop(ev) {
-   var data = ev.dataTransfer.getData("Text");
-   ev.target.appendChild(document.getElementById(data));
-   ev.stopPropagation();
-   return false;
-   
+
+
+function checkStageComplited() {
+      var elContainer = document.querySelector('.theHiddensContainer');    
+      console.log(elContainer)
+    if (elContainer.innerHTML === '') {
+    console.log('!')
+    gState.currLevel++;
+    var elBottun = document.querySelector('.buttonContainer');
+    elBottun.style.display = 'block'
+    // initGame2()
+    }
+    
 }
+    
+
 
 
 

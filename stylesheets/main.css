@@ -6428,15 +6428,50 @@ footer {
   border-radius: 8px;
   justify-content: center; }
 
-.tableUpTo100 td {
-  padding: 10px; }
+.cell {
+  border: 2px solid black;
+  padding: 5%; }
 
-.hidden {
-  background-color: red; }
+.drag {
+  border: 2px solid black;
+  padding: 5%; }
 
-#boxA {
-  padding: 5px;
-  width: 5px; }
+.row {
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  margin: 5%;
+  margin-top: 0%;
+  flex-wrap: wrap; }
+
+.row div {
+  font-size: 2rem;
+  margin: 3%;
+  padding: 5%; }
+
+.theHiddensContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  flex-wrap: wrap; }
+
+.theHiddensContainer div {
+  margin: 5%;
+  font-size: 2rem; }
+
+.buttonContainer {
+  border: 2px solid black;
+  font-family: 'Kanit', sans-serif;
+  background-color: lightgrey;
+  opacity: 0.95;
+  color: dimgray;
+  padding: 50px;
+  top: 170px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  position: absolute; }
 
 .bodyChal3 {
   background-color: white; }
