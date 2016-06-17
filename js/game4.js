@@ -4,32 +4,32 @@
 'use strict';
 
 var gStageNow = 0;
-// var gDifficult = 4;
+
 
 
 var gStages = [
     {
         id: 1,
-        txt: 'How much??',
-        answers:['a','b','correct','d'],
-        correctOpt: 2,
+        txt: 'How much pink flowers are in the picture?',
+        answers:['1','2','3','4'],
+        correctOpt: 3,
         className: 'flower',
         objNum: 4
     },
 
     {
         id: 2,
-        txt: 'How much?',
-        answers:['correct','b','c','d'],
-        correctOpt: 0,
+        txt: 'How much birds are in the picture?',
+        answers:['1','2','3','4'],
+        correctOpt: 3,
         className: 'bird',
         objNum: 3
     },
 
     {
         id: 3,
-        txt: 'How much?',
-        answers:['a','b','c','correct'],
+        txt: 'How much tress are displayed?',
+        answers:['2','4','1','5'],
         correctOpt: 3,
         className: 'tree',
         objNum: 5
@@ -46,8 +46,7 @@ function renderObjs(){
     var elObjFrame = document.querySelector('.objFrame');
     var counter = 1;
 
-    // var $elQuestion = $('.question').html(gQuests[gCurrQuest].txt);
-
+    var $elQuestion = $('.questDis').html(gStages[gStageNow].txt);
 
     var strHtmls = gStages[gStageNow].answers.map(function (answer,i) {
         var strHtml = '<li class="answer" onclick="checkAnswer('+i+')">' + answer + '</li>';
@@ -61,7 +60,6 @@ function renderObjs(){
 
         var strImg = '<img class="objectBox ' + (gStages[gStageNow].className + counter) +
             '" src="img/game4Img/' + gStages[gStageNow].className + '.png">';
-
         counter++;
         
         elObjFrame.innerHTML += strImg;
