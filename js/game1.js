@@ -8,7 +8,7 @@ var gQuests = [
     {
         id: 1,
         txt: 'Who was created by Gepetto the woodcarver??',
-        opts:['a','b','c','Pinokio'],
+        opts:['Arthur','Moffie','Vincent','Pinokio'],
         correctOpt: 3,
         lifeSave: true
     },
@@ -16,7 +16,7 @@ var gQuests = [
     {
         id: 2,
         txt: 'Who painted the Mona Lisa?',
-        opts:['a','Leonardo da Vinci','c','d'],
+        opts:['Leonardo dicaprio','Leonardo da Vinci','Picaso','Michaelangelo'],
         correctOpt: 1,
         lifeSave: true
     },
@@ -24,7 +24,7 @@ var gQuests = [
     {
         id: 3,
         txt: 'Who is the bear in The Jungle Book??',
-        opts:['a','b','Baloo','d'],
+        opts:['Joffrie','Arthamis','Baloo','Aviv'],
         correctOpt:2,
         lifeSave: true
     }
@@ -59,6 +59,8 @@ function checkOpt(i){
     if(i === gQuests[gCurrQuest].correctOpt){
         alert('Correct!');
         gCurrQuest++;
+        console.log(gCurrQuest);
+        ifWon();
         renderQuest();
     }
 
@@ -71,16 +73,20 @@ function checkOpt(i){
 
 function gameOver(){
 
-    alert('sry wrong answer, please try again.');
+    alert('Sry wrong answer, please try again.');
     $('.options').hide();
     gCurrQuest = 0;
     renderQuest();
-    //needs to be in delay, for User exp.
-    // $('.options').show();
 
 }
 
+function ifWon(){
+    if(gCurrQuest === gQuests.length){
+        alert('game won');
+        window.location.href = 'index.html';
+    }
 
+}
 
 function lifeSaver(){
     var min = 0;
