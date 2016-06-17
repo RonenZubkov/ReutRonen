@@ -5,8 +5,6 @@
 
 var gStageNow = 0;
 
-
-
 var gStages = [
     {
         id: 1,
@@ -21,7 +19,7 @@ var gStages = [
         id: 2,
         txt: 'How much birds are in the picture?',
         answers:['1','2','3','4'],
-        correctOpt: 3,
+        correctOpt: 2,
         className: 'bird',
         objNum: 3
     },
@@ -69,12 +67,12 @@ function renderObjs(){
 
 
 function checkAnswer(i){
-    console.log('answers index is: ',i);
     if(i === gStages[gStageNow].correctOpt){
         alert('Correct!');
         gStageNow++;
         cleanLastStage();
         renderObjs();
+        checkLvl();
     }
 
     else{
@@ -91,4 +89,13 @@ function gameOver(){
 function cleanLastStage(){
 
     $('.objFrame').html('');
+}
+
+function checkLvl(){
+    if(gStageNow === 1)
+        console.log('Hello blat');
+}
+
+function level2(){
+
 }

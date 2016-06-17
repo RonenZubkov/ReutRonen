@@ -7,7 +7,6 @@
         // url('myfont.woff') format('woff');
 }
 
-//iphone 6 	375 � 667//
 .index {
   background-color: whitesmoke;
 }
@@ -20,7 +19,6 @@
   flex-direction: column;
   padding: 10%;
   flex-wrap: wrap;
-  // width: 375px;
   height: 600px;
 
   .chal {
@@ -42,54 +40,79 @@
 
 .headerIndex {
   background-color: #76EEC6;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   justify-content: center;
-  
+  flex-wrap: wrap;
+  width: 100%;
+  height: 30%;
+  font-size: 16px;
+
     .headline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20%;
+      order: 1;
+      height: 15%;
+
       a {
         font-family: MyWebFont;
+<<<<<<< HEAD
         // font-weight: 300;
         font-size: 8vw;
         // top: -1;
+=======
+        font-size: 1.2em;
+>>>>>>> 5b039d1e8dfbd4ac99398316df12c10cb00850fe
         letter-spacing: 0.2em;
         color:  white;
-        // -webkit-text-stroke-color: darkblue;
-        // -webkit-text-stroke-width: 0.03em
       }
+
+
+
   }
-      
-  .ulContainer {
-    display: flex;
-  justify-content: center;
-    // align-items: ;
-  
-flex-wrap: nowrap
-    
+
+
+  .navMain{
+    display:flex;
+    order:2;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+
+    .nav{
+      //display: flex;
+      .navOpt{
+        font-size: 0.8em;
+      }
     }
-  
-  
+
+    .nav > li > a {
+      display:flex;
+      position:static;
+      padding: 0;
+    }
+
+    .navOpt{
+      height: 50%;
+      display:inline-flex;
+      }
+
+    .progressBar{
+      height: 40%;
+    }
+  }
+
 }
 
 
 .item{
-  // margin:5px;
   border: 2px solid grey;
 }
 
 .footMain{
-  // width: 375px;
   height: 10%;
   background-color: #76EEC6;
 }
 
-// #container {
-//   margin: 20px;
-//   width: 200px;
-//   height: 200px;
-//   position: relative;
-// }
