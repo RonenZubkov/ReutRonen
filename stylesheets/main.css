@@ -6532,6 +6532,19 @@ footer {
   padding: 5%;
   margin: 2%; }
 
+.buttonContainer {
+  border: 2px solid black;
+  font-family: 'Kanit', sans-serif;
+  background-color: lightgrey;
+  opacity: 0.95;
+  color: dimgray;
+  padding: 50px;
+  top: 170px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  position: absolute; }
+
 @font-face {
   font-family: 'MyWebFont';
   src: url("../font/KBZipaDeeDooDah.ttf") format("woff2"); }
@@ -6572,7 +6585,7 @@ footer {
 
 .headerIndex .headline a {
   font-family: MyWebFont;
-  font-size: 10vw;
+  font-size: 8vw;
   letter-spacing: 0.2em;
   color: white; }
 

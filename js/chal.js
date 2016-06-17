@@ -37,7 +37,8 @@ function getChals() {
             }
         ];
     }    
-    saveToStorage('chals', gChals);    
+    saveToStorage('chals', gChals); 
+    console.table(gChals)   
     return gChals;
 
 }
@@ -94,6 +95,7 @@ function getChalById(chalId) {
 
 
 function reportSolved(chalId){
+
     gChals = getFromStorage('chals');
     
     gChals[chalId].isSolved = true;

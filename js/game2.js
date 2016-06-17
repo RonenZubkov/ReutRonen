@@ -77,16 +77,16 @@ function renderTheHiddens() {
        
         $('.droppable').droppable({
             accept: function(e){
-                return e.text() === $(this).text();
-            },
+                        return e.text() === $(this).text();
+                    },
             drop: function(e) {
-                counter++;
-                if (gLevels[gState.currLevel].numsToHide.length === counter) {
-                    // alert('!')
-                    gState.currLevel++;
-                    $('.buttonContainer').css('display', 'block')                    
-                };
-            }
+                    counter++;
+                    if (gLevels[gState.currLevel].numsToHide.length === counter) {
+                        // alert('!')
+                        gState.currLevel++;
+                        $('.buttonContainer').css('display', 'block')                    
+                    };
+                }
         });
     });
 }
