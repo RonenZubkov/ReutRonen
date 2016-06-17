@@ -6506,19 +6506,46 @@ footer {
 
 .gameContainer {
   border: 2px solid black;
-  z-index: 1; }
+  position: relative; }
 
 .gameContainer jpg {
-  z-index: 2; }
+  width: 100%;
+  height: 100%; }
 
-.gameContainer .row {
-  z-index: 3;
+.gameContainer .questContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.gameContainer .questContainer .row {
   display: flex;
   justify-content: center;
-  align-items: stretch; }
+  align-content: stretch;
+  align-items: stretch;
+  padding: 0;
+  margin: 1%; }
 
-.gameContainer .row .quset {
-  border: 1px solid black; }
+.gameContainer .questContainer .row .quset {
+  border: 1px solid black;
+  order: 0;
+  flex: 1 1 auto;
+  align-self: stretch;
+  font-size: 2em;
+  background-color: wheat;
+  padding: 2%; }
+
+.answerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2%;
+  margin: 2%; }
+
+.answerContainer .ans {
+  border: 1px solid black;
+  padding: 5%;
+  margin: 2%; }
 
 @font-face {
   font-family: 'MyWebFont';
