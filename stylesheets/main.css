@@ -6232,58 +6232,76 @@ footer {
   color: #777; }
 
 .game4 {
-  height: 100%;
+  height: 80%;
   width: 100%;
   background: url("../../img/game4Img/background.jpg");
   background-repeat: no-repeat;
-  background-size: 100%; }
-
-.game4 .objFrame {
-  height: 60%;
-  width: 100%;
+  background-size: 100%;
+  flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center; }
+
+.game4 .objFrame {
+  min-height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1%;
+  padding: 1%;
+  order: 1; }
 
 .game4 .objFrame .objectBox {
-  width: 50px;
-  height: 75px; }
+  width: 50%;
+  height: 10%;
+  order: 2; }
 
 .game4 .objFrame .flower1 {
-  margin: 140px 30px 0 15px;
-  width: 40px;
-  height: 40px; }
+  margin: 40% 10% 0 1%;
+  width: 10%;
+  height: 2%; }
 
 .game4 .objFrame .flower2 {
-  margin: 170px 20px 0 0;
-  width: 45px;
-  height: 45px; }
+  margin: 40% 2% 0 1%;
+  width: 7%;
+  height: 2%; }
 
 .game4 .objFrame .flower3 {
-  width: 85px;
-  height: 85px;
-  margin: 290px 30px 0 0; }
+  width: 7%;
+  height: 3%;
+  margin: 40% 0 0 1%; }
 
 .game4 .objFrame .flower4 {
-  margin: 180px 30px 0 0;
-  height: 70px;
-  width: 70px; }
+  margin: 30% 0 0 1%;
+  height: 4%;
+  width: 7%; }
 
 .game4 .objFrame .bird1 {
-  position: relative;
-  padding-top: 25px;
+  margin-top: 15%;
   animation: fly 7s;
-  animation-direction: alternate; }
+  animation-direction: alternate;
+  height: 14%;
+  width: 14%;
+  position: relative; }
 
 .game4 .objFrame .bird2 {
-  padding-top: 25px;
+  margin-top: 18%;
   animation: fly 7s;
-  animation-direction: alternate; }
+  animation-direction: alternate;
+  height: 24%;
+  width: 24%;
+  position: relative; }
 
 .game4 .objFrame .bird3 {
-  padding-top: 25px;
-  animation: fly 7s;
-  animation-direction: alternate; }
+  margin-top: 25%;
+  padding-top: 6%;
+  animation: flyLonger 7s;
+  animation-direction: alternate;
+  height: 34%;
+  width: 34%;
+  position: relative; }
 
 .game4 .objFrame .tree1 {
   margin: 30% 0 0 0; }
@@ -6307,14 +6325,32 @@ footer {
 .game4 .answers {
   display: flex;
   justify-content: space-around;
-  height: 100px;
-  padding: 0px; }
+  height: 40%;
+  padding: 6%;
+  flex-wrap: wrap;
+  margin: 4% 1% 0% 1%;
+  order: 3; }
 
 .game4 .answers .answer {
   list-style-type: none;
-  padding: 10px;
+  padding: 4%;
   border: 2px solid red;
-  width: 150px; }
+  width: 130px;
+  border-radius: 100%;
+  height: 100px;
+  text-align: center;
+  align-content: center;
+  justify-content: center; }
+
+.game4 .questDis {
+  border: 3px solid darkseagreen;
+  padding: 2%;
+  margin: 3%;
+  text-align: center;
+  order: 2;
+  align-content: center;
+  width: 60%;
+  height: 20%; }
 
 .foot {
   width: 100%;
@@ -6322,27 +6358,10 @@ footer {
 
 @keyframes fly {
   0% {
-    right: 5px; }
-  25% {
-    right: 10px; }
-  50% {
-    right: 25px; }
-  75% {
-    right: 70px; }
+    right: 0px; }
   100% {
-    right: 150px; } }
-
-@keyframes fly {
-  0% {
-    right: 5px; }
-  25% {
-    right: 10px; }
-  50% {
-    right: 25px; }
-  75% {
-    right: 70px; }
-  100% {
-    right: 150px; } }
+    right: 300px;
+    opacity: 0; } }
 
 .game {
   display: flex;
@@ -6366,10 +6385,6 @@ footer {
   flex-wrap: nowrap;
   justify-content: space-between;
   flex-direction: row; }
-
-.box .nav .lifeSaver {
-  flex-wrap: nowrap;
-  justify-content: flex-end; }
 
 .box .nav .navRuler {
   display: flex;
@@ -6534,25 +6549,48 @@ footer {
 
 .headerIndex {
   background-color: #76EEC6;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 30%;
+  font-size: 16px; }
 
 .headerIndex .headline {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  width: 20%;
+  order: 1;
+  height: 15%; }
 
 .headerIndex .headline a {
   font-family: MyWebFont;
-  font-size: 10vw;
+  font-size: 1.2em;
   letter-spacing: 0.2em;
   color: white; }
 
-.headerIndex .ulContainer {
+.headerIndex .navMain {
   display: flex;
-  justify-content: center;
+  order: 2;
+  flex-direction: row;
   flex-wrap: nowrap; }
+
+.headerIndex .navMain .nav .navOpt {
+  font-size: 0.8em; }
+
+.headerIndex .navMain .nav > li > a {
+  display: flex;
+  position: static;
+  padding: 0; }
+
+.headerIndex .navMain .navOpt {
+  height: 50%;
+  display: inline-flex; }
+
+.headerIndex .navMain .progressBar {
+  height: 40%; }
 
 .item {
   border: 2px solid grey; }
