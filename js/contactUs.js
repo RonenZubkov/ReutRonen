@@ -3,60 +3,22 @@
  */
 'use strict';
 
-// $(document).ready(function () {
-//     function init() {
-//         if (localStorage['name']) {
-//             $('#name').val(localStorage['name']);
-//         }
-//         if (localStorage['email']) {
-//             $('#email').val(localStorage['email']);
-//         }
-//         if (localStorage['message']) {
-//             $('#message').val(localStorage['message']);
-//         }
-//         if (localStorage['phone']) {
-//             $('#phone').val(localStorage['phone']);
-//         }
-//     }
-//     init();
-// });
 
+var gForm = [{
+    name:'',
+    phone:0,
+    email:'',
+    contact:'',
+    txt: ''
+}];
 
-$('.stored').keyup(function () {
-    localStorage[$(this).attr('name')] = $(this).val();
-});
+function saveForm() {
 
-$('#localStorageTest').submit(function() {
-    localStorage.clear();
-});
-
-// var input_name = '';
-// init() {
-//     $.each( $(‘form input’), function() {
-//         input_name = $(this).attr(‘name’);
-//         if (localStorage[input_name]) {
-//             $(this).val(localStorage[input_name]);
-//         }
-//     });
-// }
-
-window.onload = function() {
-
-    // Check for LocalStorage support.
-    if (localStorage) {
-
-        // Add an event listener for form submissions
-        document.querySelector('frmRegister').addEventListener('submit', function() {
-            // Get the value of the name field.
-            var name = document.getElementById('name').value;
-            var name = document.getElementById('phone').value;
-            var name = document.getElementById('email').value;
-            var name = document.getElementById('contact').value;
-
-            // Save the name in localStorage.
-            localStorage.setItem('name', name);
-        });
-
-    }
-
+    gForm.name= document.querySelector('#name').value;
+    gForm.phone = document.querySelector('#phone').value;
+    gForm.email = document.querySelector('#email').value;
+    gForm.contact = document.querySelector('#contact').value;
+    gForm.txt = document.querySelector('#message').value;
+    
+    saveToStorage('form', gForm);
 }

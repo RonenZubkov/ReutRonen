@@ -39,7 +39,7 @@ function getChals() {
         ];
     }    
     saveToStorage('chals', gChals); 
-    console.table(gChals)   
+    console.table(gChals);
     return gChals;
 
 }
@@ -57,7 +57,7 @@ function renderChals(chals, selector) {
                         '</div>';
         
         return strHtml;
-    })
+    });
 
     elContainer.innerHTML = strHTMLs.join('');
 }
@@ -108,16 +108,6 @@ function reportSolved(chalId){
 }
 
 
-function saveToStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
-}
-
-
-function getFromStorage(key) {
-    var str = localStorage.getItem(key);
-    return JSON.parse(str);
-}
-
 function progressBar(){
     var elPorgress = document.querySelector('.progressBar');
     var progress = 0;
@@ -129,4 +119,16 @@ function progressBar(){
         elPorgress.style.width = (progress + '%');
     }
 }
+
+function saveToStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+
+function getFromStorage(key) {
+    var str = localStorage.getItem(key);
+    return JSON.parse(str);
+}
+
+
 
