@@ -56,7 +56,6 @@ function checkOpt(i){
     if(i === gQuests[gCurrQuest].correctOpt){
         alert('Correct!');
         gCurrQuest++;
-        console.log(gCurrQuest);
         ifWon();
         renderQuest();
     }
@@ -69,7 +68,6 @@ function checkOpt(i){
 
 
 function gameOver(){
-
     alert('Sry wrong answer, please try again.');
     $('.options').hide();
     gCurrQuest = 0;
@@ -79,14 +77,6 @@ function gameOver(){
 
 function ifWon(){
     if(gCurrQuest === gQuests.length){
-        alert('game won');
-        window.location.href = 'index.html';
+        $('.buttonContainer').css('display', 'block');
     }
-
-}
-
-
-
-function getRandomIntInclusive(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

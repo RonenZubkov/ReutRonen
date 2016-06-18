@@ -71,6 +71,7 @@ function checkAnswer(i){
         alert('Correct!');
         gStageNow++;
         cleanLastStage();
+        ifWon();
         renderObjs();
         checkLvl();
     }
@@ -82,29 +83,51 @@ function checkAnswer(i){
 }
 
 function gameOver(){
-    console.log('Game Over');
+    alert('Sry wrong answer please try again,or press home to return.');
+    cleanLastStage();
+    gStageNow = 0;
+    renderObjs();
 }
 
 
 function cleanLastStage(){
-
     $('.objFrame').html('');
+}
+
+function ifWon(){
+    if(gStageNow === gStages.length){
+        alert('game won');
+        console.log('gameWon');
+        $('.buttonContainer').css('display', 'block');
+    }
+
 }
 
 function checkLvl(){
     if(gStageNow === 1)console.log('Hello blat');
+    if(gStages[gStageNow].id === 2)flyBird();
     if(gStages[gStageNow].id === 3)opacityLevel();
+
 }
 
-function level2(){
+function flyBird(){
+    var elObjects = document.querySelectorAll('.objectBox');
 
+    [].forEach.call(elObjects, function(elObject) {
+        elObject.classList.add('flyRight');
+        setTimeout(function () {
+            elObject.style.visibility = 'hidden';
+        }, 7000);
+});
 }
 
 function opacityLevel(){
-    var divs = document.querySelectorAll('.objectBox');
+    var elObjects = document.querySelectorAll('.objectBox');
 
-    [].forEach.call(Objects, function(object) {
-        // do whatever
-        object.style.color = "red";
+    [].forEach.call(elObjects, function(elObject) {
+        elObject.classList.add('opacityChange');
+        setTimeout(function () {
+            elObject.style.visibility = 'hidden';
+        }, 7000);
     });
 }
