@@ -3,8 +3,15 @@
 
 @font-face {
   font-family: 'MyWebFont';
-  src:  url('../font/KBZipaDeeDooDah.ttf') format('woff2'),
+  src:  url('../font/KBZipaDeeDooDah.ttf') format('woff2');
         // url('myfont.woff') format('woff');
+  // font-family: 'MyWebFont2';
+  
+        
+}
+@font-face {
+  font-family: 'MyWebFont2';
+  src:  url('../font/DKCoolCrayon.ttf') format('woff');
 }
 
 .index {
@@ -12,20 +19,26 @@
 }
 
 
-.content{
+.content {
   display:flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   padding: 10%;
   flex-wrap: wrap;
-  height: 600px;
 
   .chal {
-    border: 2px solid green;
-    padding: 3%;
+    background: radial-gradient(#4FB4E8 0%, #C195D3 30%, whitesmoke 85%);
+    border-radius: 50%;
+     padding: 7%;
+    margin: 7%;
     position: relative;
-    // width: 200px;
+    font-family: MyWebFont2; 
+      h2 {
+        font-size: 8vw;
+        color: midnightblue;
+        padding: 3%;
+      }
   }
 }
 
@@ -39,65 +52,26 @@
 
 
 .headerIndex {
-  background-color: #76EEC6;
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 30%;
-  font-size: 16px;
+  background-color: #76EEC6;
 
     .headline {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 20%;
-      order: 1;
-      height: 15%;
 
-      a {
-        font-family: MyWebFont;
-        font-size: 1.2em;
-        letter-spacing: 0.2em;
-        color:  white;
-      }
-
-
-
-  }
-
-
-  .navMain{
-    display:flex;
-    order:2;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-
-    .nav{
-      //display: flex;
-      .navOpt{
-        font-size: 0.8em;
-      }
+        a {
+            font-family: MyWebFont;
+            font-size: 8vw;
+            letter-spacing: 0.2em;
+            color:  white;
+        }
     }
-
-    .nav > li > a {
-      display:flex;
-      position:static;
-      padding: 0;
-    }
-
-    .navOpt{
-      height: 50%;
-      display:inline-flex;
-      }
-
     .progressBar{
       height: 40%;
     }
-  }
-
 }
 
 
@@ -106,7 +80,56 @@
 }
 
 .footMain{
-  height: 10%;
+  // height: 10%;
   background-color: #76EEC6;
+  
+  h3 {
+  font-size: 5vw;
+    // display: flex;   
+    // align-items: center;
+    // justify-content: center;    
+    // margin: 5%
+  }
+  .nav {
+    display: flex;   
+    align-items: center;
+    justify-content: space-around;
+    background-color: whitesmoke;
+  }
+  a {
+  font-size: 4vw;    
 }
+}
+  // .navMain{
+  //   display:flex;
+  //   order:2;
+  //   flex-direction: row;
+  //   flex-wrap: nowrap;
 
+// nav
+  // //   .nav{
+  // //     //display: flex;
+  // //     .navOpt{
+  // //       font-size: 0.8em;
+  // //     }
+  // //   }
+
+  // //   .nav > li > a {
+  // //     display:flex;
+  // //     position:static;
+  // //     padding: 0;
+  // //   }
+
+  // //   .navOpt{
+  // //     height: 50%;
+  // //     display:inline-flex;
+  // //     }
+
+
+  // // }
+
+
+
+
+
+        

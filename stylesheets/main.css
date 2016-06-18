@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:400,500italic);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6040,23 +6041,31 @@ footer {
   border-radius: 8px;
   justify-content: center; }
 
+.bodyGame2 {
+  background-image: url("../../img/img_game_2/background.jpg"); }
+
 .drag {
-  border: 0.5px solid black;
+  border: 0.5px solid white;
+  border-radius: 10%;
+  padding: 5%;
+  font-family: MyWebFont2;
   background-color: powderblue;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 2rem; }
 
 .row {
   display: flex;
   align-items: flex-start;
   padding: 5%;
-  margin: 5%;
   margin-top: 0%;
   flex-wrap: wrap; }
   .row .cell {
-    font-size: 1.5rem;
+    border-radius: 10%;
+    font-family: MyWebFont2;
+    font-size: 6vw;
     margin: 3%;
     padding: 5%;
-    border: 0.5px solid black;
+    border: 0.5px solid white;
     background-color: antiquewhite; }
 
 .theHiddensContainer {
@@ -6081,17 +6090,312 @@ footer {
   width: 400px;
   margin-left: -200px;
   position: absolute; }
+  .buttonContainer h3 {
+    font-family: 'MyWebFont2'; }
+
+@keyframes eyes {
+  0%,
+  8.88889%,
+  100% {
+    top: -50px; }
+  17.77778% {
+    top: -45px; }
+  91.11111% {
+    top: -20px; }
+  57.77778%,
+  88.88889% {
+    top: -15px; }
+  66.66667% {
+    top: -25px; } }
+
+@keyframes wings {
+  0%,
+  88.88889%,
+  100% {
+    top: 70px; }
+  91.11111% {
+    top: 60px; } }
+
+@keyframes feet {
+  0%,
+  88.88889%,
+  100% {
+    top: -2px; }
+  91.11111% {
+    top: 0px; } }
+
+@keyframes cloud {
+  0% {
+    left: -140px; }
+  100% {
+    left: 280px; } }
+
+html {
+  height: 100%;
+  background-color: #222024;
+  background: radial-gradient(circle at center, #47414c 0%, #222024 100%);
+  background-repeat: no-repeat; }
+
+body {
+  text-align: center;
+  font: normal 100% 'Fira Sans', sans-serif; }
+
+h2 {
+  font-size: 4vw; }
+  h2 span {
+    font-size: 60%; }
+
+a {
+  color: #aaa; }
+
+.globe {
+  margin: 1em 0 0 0;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  border: 20px solid #f7dbcf;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #86aecc 0%, #d4e4ef 100%);
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3); }
+  .globe:before, .globe:after {
+    position: absolute;
+    content: "";
+    box-sizing: border-box;
+    border-radius: 50%;
+    z-index: 10; }
+  .globe:before {
+    height: 94%;
+    width: 94%;
+    top: 3%;
+    right: 3%;
+    border: 10px solid transparent;
+    border-right-color: rgba(255, 255, 255, 0.3);
+    border-right-width: 10px;
+    border-right-style: solid; }
+  .globe:after {
+    top: 50px;
+    right: 65px;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3); }
+  .globe .bird {
+    position: absolute;
+    z-index: 1;
+    left: 96px;
+    top: 100px; }
+    .globe .bird .body {
+      position: absolute;
+      width: 175px;
+      height: 186px;
+      border-radius: 50%;
+      background-clip: padding-box;
+      background-color: #11e7d7;
+      box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3); }
+      .globe .bird .body:before, .globe .bird .body:after {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        width: 26px;
+        height: 93px;
+        border-radius: 50%;
+        background-color: #11e7d7;
+        box-shadow: inset 0 0 13px rgba(0, 0, 0, 0.3);
+        top: 70px;
+        animation: wings 4.5s linear infinite; }
+      .globe .bird .body:before {
+        left: 0; }
+      .globe .bird .body:after {
+        right: 0; }
+      .globe .bird .body .eye {
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+        width: 56px;
+        height: 56px;
+        top: 28px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #01c7be;
+        box-shadow: inset 0 0 0 1px #01c7be; }
+        .globe .bird .body .eye:before, .globe .bird .body .eye:after {
+          position: absolute;
+          content: ""; }
+        .globe .bird .body .eye:before {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background-color: #000;
+          top: 30px; }
+        .globe .bird .body .eye:after {
+          width: 200px;
+          height: 200px;
+          background: radial-gradient(ellipse at center, rgba(109, 0, 25, 0) 0%, rgba(130, 1, 31, 0) 35%, #01c7be 36%, #31bfae 100%);
+          animation: eyes 4.5s linear infinite; }
+        .globe .bird .body .eye.left {
+          left: 15px; }
+          .globe .bird .body .eye.left:before {
+            left: 20px; }
+          .globe .bird .body .eye.left:after {
+            left: -60px;
+            top: -45px; }
+        .globe .bird .body .eye.right {
+          right: 15px; }
+          .globe .bird .body .eye.right:before {
+            right: 20px; }
+          .globe .bird .body .eye.right:after {
+            right: -60px;
+            top: -45px; }
+      .globe .bird .body .beak {
+        position: absolute;
+        z-index: 1;
+        width: 41px;
+        height: 55px;
+        top: 70px;
+        left: 67px;
+        border-radius: 50%;
+        background-color: #31bfae; }
+        .globe .bird .body .beak:before {
+          position: absolute;
+          content: "";
+          width: inherit;
+          height: inherit;
+          top: 2px;
+          border-radius: 50%;
+          background: #eb9f2d; }
+        .globe .bird .body .beak:after {
+          position: absolute;
+          content: "";
+          z-index: -1;
+          width: 37px;
+          height: inherit;
+          top: 12px;
+          left: 2px;
+          border-radius: 50%;
+          background: #31bfae; }
+        .globe .bird .body .beak div {
+          position: absolute;
+          width: 43px;
+          height: 43px;
+          top: -1px;
+          left: -1px;
+          border-radius: 50% 60% 50%  40%;
+          background-clip: padding-box;
+          background-color: #f7d35d;
+          transform: rotate(-45deg); }
+          .globe .bird .body .beak div:before {
+            position: absolute;
+            content: "";
+            transform: rotate(45deg);
+            width: 17px;
+            height: 8px;
+            top: 10px;
+            left: 20px;
+            border-radius: 50%;
+            background-color: #fff; }
+      .globe .bird .body .feet {
+        position: absolute;
+        bottom: 15px;
+        width: 100%; }
+        .globe .bird .body .feet:before, .globe .bird .body .feet:after {
+          position: absolute;
+          content: "";
+          width: 27px;
+          height: 21px;
+          border-radius: 50%;
+          background-color: #f8c14d;
+          box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2);
+          animation: feet 4.5s linear infinite; }
+        .globe .bird .body .feet:before {
+          left: 40px; }
+        .globe .bird .body .feet:after {
+          right: 40px; }
+  .globe .wire {
+    position: absolute;
+    z-index: -1;
+    width: 500px;
+    height: 400px;
+    left: -173px;
+    top: -215px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: black; }
+  .globe .hills {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    top: 230px;
+    left: 60px;
+    transform: rotate(45deg);
+    background: radial-gradient(ellipse at top left, #aad95d 0%, #bbc369 100%);
+    box-shadow: inset 5px 0 12px rgba(0, 0, 0, 0.2); }
+    .globe .hills:before, .globe .hills:after {
+      position: absolute;
+      content: "";
+      width: 178px;
+      height: 90px;
+      border-radius: 50%;
+      background: inherit;
+      box-shadow: inherit; }
+    .globe .hills:before {
+      left: -90px;
+      top: 30px;
+      z-index: -1;
+      transform: rotate(-20deg); }
+    .globe .hills:after {
+      left: 0px;
+      top: -55px;
+      transform: rotate(120deg); }
+  .globe .cloud {
+    position: absolute;
+    width: 70px;
+    height: 24px;
+    background: linear-gradient(to bottom, #f2f9fe 5%, #d6f0fd 100%);
+    border-radius: 20px;
+    top: -20px;
+    z-index: -1;
+    animation: cloud 9s linear infinite; }
+    .globe .cloud.small {
+      top: -50px;
+      transform: scale(0.6);
+      animation-delay: -1.5s;
+      animation-duration: 13.5s; }
+    .globe .cloud:before, .globe .cloud:after {
+      position: absolute;
+      content: "";
+      background: inherit;
+      z-index: -1; }
+    .globe .cloud:before {
+      width: 36px;
+      height: 36px;
+      top: -18px;
+      right: 10px;
+      border-radius: 40px; }
+    .globe .cloud:after {
+      width: 20px;
+      height: 20px;
+      top: -10px;
+      left: 10px;
+      border-radius: 20px; }
+
+body {
+  background-color: whitesmoke; }
 
 .gameContainer {
-  border: 2px solid black;
-  position: relative; }
+  position: relative;
+  margin-top: 8%; }
   .gameContainer jpg {
     width: 100%;
     height: 100%; }
   .gameContainer .questContainer {
     position: absolute;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    font-family: MyWebFont2; }
     .gameContainer .questContainer .row {
       display: flex;
       justify-content: center;
@@ -6104,9 +6408,9 @@ footer {
         order: 0;
         flex: 1 1 auto;
         align-self: stretch;
-        font-size: 2em;
+        font-size: 8vw;
         background-color: wheat;
-        padding: 2%; }
+        padding: 3%; }
 
 .answerContainer {
   display: flex;
@@ -6114,15 +6418,35 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   padding: 2%;
-  margin: 2%; }
+  margin-top: 10%;
+  margin-bottom: 19%;
+  font-family: MyWebFont2; }
   .answerContainer .ans {
     border: 1px solid black;
     padding: 5%;
-    margin: 2%; }
+    margin: 2%;
+    font-size: 6vw; }
+
+.buttonContainer {
+  border: 2px solid black;
+  font-family: 'Kanit', sans-serif;
+  background-color: lightgrey;
+  opacity: 0.95;
+  color: dimgray;
+  padding: 50px;
+  top: 170px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  position: absolute; }
 
 @font-face {
   font-family: 'MyWebFont';
   src: url("../font/KBZipaDeeDooDah.ttf") format("woff2"); }
+
+@font-face {
+  font-family: 'MyWebFont2';
+  src: url("../font/DKCoolCrayon.ttf") format("woff"); }
 
 .index {
   background-color: whitesmoke; }
@@ -6133,12 +6457,18 @@ footer {
   align-items: center;
   flex-direction: column;
   padding: 10%;
-  flex-wrap: wrap;
-  height: 600px; }
+  flex-wrap: wrap; }
   .content .chal {
-    border: 2px solid green;
-    padding: 3%;
-    position: relative; }
+    background: radial-gradient(#4FB4E8 0%, #C195D3 30%, whitesmoke 85%);
+    border-radius: 50%;
+    padding: 7%;
+    margin: 7%;
+    position: relative;
+    font-family: MyWebFont2; }
+    .content .chal h2 {
+      font-size: 8vw;
+      color: midnightblue;
+      padding: 3%; }
 
 .lock {
   position: absolute;
@@ -6147,46 +6477,33 @@ footer {
   width: 40%; }
 
 .headerIndex {
-  background-color: #76EEC6;
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 30%;
-  font-size: 16px; }
+  background-color: #76EEC6; }
   .headerIndex .headline {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 20%;
-    order: 1;
-    height: 15%; }
+    justify-content: center; }
     .headerIndex .headline a {
       font-family: MyWebFont;
-      font-size: 1.2em;
+      font-size: 8vw;
       letter-spacing: 0.2em;
       color: white; }
-  .headerIndex .navMain {
-    display: flex;
-    order: 2;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-    .headerIndex .navMain .nav .navOpt {
-      font-size: 0.8em; }
-    .headerIndex .navMain .nav > li > a {
-      display: flex;
-      position: static;
-      padding: 0; }
-    .headerIndex .navMain .navOpt {
-      height: 50%;
-      display: inline-flex; }
-    .headerIndex .navMain .progressBar {
-      height: 40%; }
+  .headerIndex .progressBar {
+    height: 40%; }
 
 .item {
   border: 2px solid grey; }
 
 .footMain {
-  height: 10%;
   background-color: #76EEC6; }
+  .footMain h3 {
+    font-size: 5vw; }
+  .footMain .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: whitesmoke; }
+  .footMain a {
+    font-size: 4vw; }
