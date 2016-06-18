@@ -2,7 +2,6 @@
 
 var gBoard;
 var gLevels = [
-                // **TODO: create more levels
             {   
                 levelId: 0,
                 boardSize: 14,
@@ -22,6 +21,7 @@ function initGame2() {
     renderBoard(gBoard, '.row')
     hideNums();
     renderTheHiddens();
+    dragAndDrop();
 }
 
 function buildBoard (size) {
@@ -56,14 +56,18 @@ function hideNums() {
 
 function renderTheHiddens() {
     
-    // **TODO: map?
-    var strHtml = '';
-    for (var i = 0; i < gLevels[gState.currLevel].numsToHide.length; i++) {
-        console.log(gLevels[gState.currLevel].numsToHide[i])
-        strHtml += '<div class="draggable draggable_'+i+' drag num_' + i + '" data-type="'+i+'">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'     
-    }
+    var strHTMLs = gLevels[gState.currLevel].numsToHide.map(function (chal, i) {
+        var strHtml = '<div class="draggable draggable_'+i+' drag num_' + i + '" data-type="'+i+'">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'
+        return strHtml;
+        
+    });
+    
     var elContainer = document.querySelector('.theHiddensContainer');
-    elContainer.innerHTML = strHtml;
+    elContainer.innerHTML = strHTMLs;
+    
+}
+    
+function dragAndDrop () {
         
     $(function() {
         $('.draggable').draggable({
@@ -80,7 +84,6 @@ function renderTheHiddens() {
             accept: function(e){
                         return e.text() === $(this).text();
                     },
-                    // **TODO: create an external function
             drop: function(e) {
                     gState.hiddensDragged++;
                     console.log(gLevels[gState.currLevel].numsToHide.length)
@@ -92,8 +95,6 @@ function renderTheHiddens() {
         });
     });
 }
-
-  
 
 
 

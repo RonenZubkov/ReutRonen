@@ -3,13 +3,11 @@
 
 var gLevels = [
             {
-                //TODO: create a function that create random quest, and levels by diffrent operators:
-            // gMathQuest: [['3 + 4', '11 + 6', '8 + 2'], ['20 + 3','1 + 2', '5 + 7'], ['3+6', '2+9', '4+5']],
-            // gMathAnswers: ['7', '17', '10', '23', '3', '12', '9', '11', '9'],
-            gMathQuest: [[], [], []],            
+
+            gMathQuest: [],            
             gMathAnswers: [],
-            boardSize = 9,
-            //TODO: add img:
+            boardSize: 9,
+            //TODO: add img $ renderImg func:
             }
 ]
 var gState = {
@@ -30,23 +28,26 @@ function createQusetAndAns () {
     var rand1 = 0;
     var rand2 = 0;
     var ans = 0;
-    // var quests = [];
-    // var answers = [];
+    var tempMathQuest = [] 
+
     for (var i = 0; i < gLevels[gState.currLevel].boardSize; i++) {
-        
         rand1 = parseInt(Math.random() * 9)
         rand2 = parseInt(Math.random() * 9)
         ans = rand1 + rand2;
-        gLevels[gState.currLevel].gMathAnswers.push (rand1 + '+' + rand2)
-        
-        for (var j = 0; j < Math.sqrt(gLevels[gState.currLevel].boardSize); j++) {
-            // var element = array[j];
-            gLevels[gState.currLevel].gMathQuest.push(ans);            
-        }
-        
+        tempMathQuest.push (rand1 + '+' + rand2)
+        gLevels[gState.currLevel].gMathAnswers.push(ans);
     }
-    console.log(answers)
-    console.log(quests)
+    
+    // TODO: think of a better way:
+    
+    var temp = tempMathQuest.slice(0, 3);
+    gLevels[gState.currLevel].gMathQuest.push(temp);
+   
+    temp = tempMathQuest.slice(3, 6);
+    gLevels[gState.currLevel].gMathQuest.push(temp);
+    
+    temp = tempMathQuest.slice(6, 9);    
+    gLevels[gState.currLevel].gMathQuest.push(temp);
     
 }
 
@@ -54,7 +55,7 @@ function renderQuests(arr, selector) {
   var elContainer = document.querySelector(selector);
   var strHtml = '';
   
-  //TODO: foreach / map
+  //TODO: foreach / map ?
     for (var i = 0; i < gLevels[gState.currLevel].gMathQuest.length; i++) {
         strHtml += '<div class="row">'
         for (var j = 0; j < gLevels[gState.currLevel].gMathQuest[i].length; j++) {
@@ -62,7 +63,7 @@ function renderQuests(arr, selector) {
         }
         strHtml += '</div>'   
         }
-        
+       
     elContainer.innerHTML = strHtml;
 }
 
