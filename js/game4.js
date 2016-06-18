@@ -92,10 +92,19 @@ function cleanLastStage(){
 }
 
 function checkLvl(){
-    if(gStageNow === 1)
-        console.log('Hello blat');
+    if(gStageNow === 1)console.log('Hello blat');
+    if(gStages[gStageNow].id === 3)opacityLevel();
 }
 
 function level2(){
 
+}
+
+function opacityLevel(){
+    var divs = document.querySelectorAll('.objectBox');
+
+    [].forEach.call(Objects, function(object) {
+        // do whatever
+        object.style.color = "red";
+    });
 }
