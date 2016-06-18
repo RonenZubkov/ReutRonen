@@ -3,7 +3,7 @@
 
 var gLevels = [
             {
-                //TODO: create a function that create random quest:
+                //TODO: create a function that create random quest, and levels by diffrent operators:
             gMathQuest: [['3 + 4', '11 + 6', '8 + 2'], ['20 + 3','1 + 2', '5 + 7'], ['3+6', '2+9', '4+5']],
             gMathAnswers: ['7', '17', '10', '23', '3', '12', '9', '11', '9']
             }
@@ -14,6 +14,8 @@ var gState = {
 }
 
 function initGame3() {
+    // **TODO: checking in local storage if gChals[1].isSolved  - and blocks the access to this page       
+
     console.log('initGame3()')
     renderQuests(gLevels[gState.currLevel].gMathQuest, '.questContainer')
     renderAns(gLevels[gState.currLevel].gMathAnswers, '.answerContainer')    
@@ -23,7 +25,7 @@ function renderQuests(arr, selector) {
   var elContainer = document.querySelector(selector);
   var strHtml = '';
   
-  //TODO: foreach
+  //TODO: foreach / map
     for (var i = 0; i < gLevels[gState.currLevel].gMathQuest.length; i++) {
         strHtml += '<div class="row">'
         for (var j = 0; j < gLevels[gState.currLevel].gMathQuest[i].length; j++) {
@@ -72,6 +74,7 @@ function checkIfToDrop (event, ui) {
     var product = +(tmp_arr[0]) + (+tmp_arr[1]);
     
     if (product === +( (ui.draggable).text() ))  {
+        // **TODO: create a class:
         $(this).css("visibility", "hidden");
         $(ui.draggable).css("visibility", "hidden");
         
@@ -81,9 +84,7 @@ function checkIfToDrop (event, ui) {
         console.log(gLevels[gState.currLevel].gMathAnswers.length)
         if(gState.ansDragged === gLevels[gState.currLevel].gMathAnswers.length) $('.buttonContainer').css("display", "block")
     }  
-    else ui.draggable.draggable({revert: true}) 
-    
-    
+    else ui.draggable.draggable({revert: true})         
 }
 
 

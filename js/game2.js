@@ -2,18 +2,22 @@
 
 var gBoard;
 var gLevels = [
-            {
+                // **TODO: create more levels
+            {   
                 levelId: 0,
                 boardSize: 14,
-                numsToHide: [4,7, 12],
+                // **TODO: create func that makes random numsToHide
+                numsToHide: [4, 7, 12],
             }
 ]
 var gState = {
     currLevel: 0,
+    hiddensDragged: 0
+    // **TODO: insted of counter in drop, add key to gState-hiddensDragged
 }
 
 function initGame2() {
-    // **TODO: checking in local storage if gChals[1].isSolved         
+    // **TODO: checking in local storage if gChals[1].isSolved  - and blocks the access tp this page       
       
     gBoard = buildBoard(gLevels[gState.currLevel].boardSize);
     console.table(gBoard);
@@ -22,9 +26,9 @@ function initGame2() {
     renderTheHiddens();
 }
 
-function buildBoard (SIZE) {
+function buildBoard (size) {
   var board = [];
-    for (var i = 0; i < SIZE; i++) {
+    for (var i = 0; i < size; i++) {
         board.push(i);
     }
     return board;
@@ -64,7 +68,7 @@ function renderTheHiddens() {
         
     $(function() {
         // console.log(counter++)
-            var counter = 0;
+            // var counter = 0;
         $('.draggable').draggable({
             revert: "invalid",
             start: function(event, ui) {
@@ -79,13 +83,14 @@ function renderTheHiddens() {
             accept: function(e){
                         return e.text() === $(this).text();
                     },
+                    // **TODO: create an external function
             drop: function(e) {
-                    counter++;
+                    gState.hiddensDragged++;
+                    // counter++;
                     console.log(gLevels[gState.currLevel].numsToHide.length)
-                    if (gLevels[gState.currLevel].numsToHide.length === counter) {
-                        // alert('!')
+                    if (gLevels[gState.currLevel].numsToHide.length ===  gState.hiddensDragged) {
                         gState.currLevel++;
-                        // $('.buttonContainer').css('display', 'block')                    
+                        $('.buttonContainer').css('display', 'block')                    
                     };
                 }
         });

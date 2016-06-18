@@ -29,7 +29,7 @@ $birdColor3: #01c7be;
 .row {  
  display:flex;
   align-items: flex-start;
-  padding: 5%;
+  padding: 3%;
   // margin:  0%;
 //   top: 0px;
 margin-top: 0%;
@@ -48,14 +48,14 @@ margin-top: 0%;
 }
 
 .theHiddensContainer {
-     display:flex;
+  display:flex;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  // padding: 1%;
 //   margin:  5%;
   flex-wrap: wrap;
   div {
-  margin:  5%;
+    margin:  5%;
     font-size: 2rem;    
       
   }
@@ -72,6 +72,10 @@ margin-top: 0%;
     position: absolute;
     h3 {
       font-family: 'MyWebFont2';
+    }
+    button {
+      font-family: 'MyWebFont2';
+      font-size: 5vw
     }
   }
   
