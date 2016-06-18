@@ -5,9 +5,15 @@ var gChals;
 function init(){    
 
     gChals = getChals();
-     
+        
     renderChals(gChals, '.content');
     progressBar();
+    
+    if(gChals[gChals.length - 1].isSolved) {
+        alert('well done!')
+    // var elCont = document.querySelector('.scene')
+    // elCont.style.display = 'block'
+    }
 }
 
 
