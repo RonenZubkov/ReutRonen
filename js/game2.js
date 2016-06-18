@@ -5,19 +5,19 @@ var gLevels = [
             {
                 levelId: 0,
                 boardSize: 14,
-                numsToHide: [4,7, 12]
+                numsToHide: [4,7, 12],
             }
-];
+]
 var gState = {
-    currLevel: 0
-};
+    currLevel: 0,
+}
 
 function initGame2() {
     // **TODO: checking in local storage if gChals[1].isSolved         
       
     gBoard = buildBoard(gLevels[gState.currLevel].boardSize);
     console.table(gBoard);
-    renderBoard(gBoard, '.row');
+    renderBoard(gBoard, '.row')
     hideNums();
     renderTheHiddens();
 }
@@ -34,10 +34,10 @@ function renderBoard(board, selector) {
     var elContainer = document.querySelector(selector);
  
     var strHTMLs = board.map(function (chal, i) {
-        var strHtml = '<div id="droppable_'+i+'" class="droppable droppable_'+i+' cell cell_' + i + '" data-type="'+i+'">' + i + '</div>';
+        var strHtml = '<div id="droppable_'+i+'" class="droppable droppable_'+i+' cell cell_' + i + '" data-type="'+i+'">' + i + '</div>'
         return strHtml;
         
-    });
+    })
     
     elContainer.innerHTML = strHTMLs.join('');
 }
@@ -56,13 +56,14 @@ function renderTheHiddens() {
     // **TODO: map?
     var strHtml = '';
     for (var i = 0; i < gLevels[gState.currLevel].numsToHide.length; i++) {
-        console.log(gLevels[gState.currLevel].numsToHide[i]);
+        console.log(gLevels[gState.currLevel].numsToHide[i])
         strHtml += '<div class="draggable draggable_'+i+' drag num_' + i + '" data-type="'+i+'">' + gBoard[gLevels[gState.currLevel].numsToHide[i]] + '</div>'     
     }
     var elContainer = document.querySelector('.theHiddensContainer');
     elContainer.innerHTML = strHtml;
         
     $(function() {
+        // console.log(counter++)
             var counter = 0;
         $('.draggable').draggable({
             revert: "invalid",
@@ -80,11 +81,12 @@ function renderTheHiddens() {
                     },
             drop: function(e) {
                     counter++;
+                    console.log(gLevels[gState.currLevel].numsToHide.length)
                     if (gLevels[gState.currLevel].numsToHide.length === counter) {
                         // alert('!')
                         gState.currLevel++;
-                        $('.buttonContainer').css('display', 'block')
-                    }
+                        // $('.buttonContainer').css('display', 'block')                    
+                    };
                 }
         });
     });

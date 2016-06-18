@@ -6510,7 +6510,7 @@ footer {
 .row {
   display: flex;
   align-items: flex-start;
-  padding: 5%;
+  padding: 3%;
   margin-top: 0%;
   flex-wrap: wrap; }
 
@@ -6527,7 +6527,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5%;
   flex-wrap: wrap; }
 
 .theHiddensContainer div {
@@ -6549,6 +6548,10 @@ footer {
 
 .buttonContainer h3 {
   font-family: 'MyWebFont2'; }
+
+.buttonContainer button {
+  font-family: 'MyWebFont2';
+  font-size: 5vw; }
 
 @keyframes eyes {
   0%,
