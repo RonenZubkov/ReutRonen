@@ -3,10 +3,10 @@
  */
 
 
+
 var gFormInput = getFromStorage('form');
 
 function init(){
-    console.log(gFormInput);
     renderTable();
 
 }

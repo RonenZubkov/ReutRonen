@@ -4,21 +4,23 @@
 'use strict';
 
 
-var gForm = [{
-    name:'',
-    phone:0,
-    email:'',
-    contact:'',
-    txt: ''
-}];
+var gForms = [];
 
 function saveForm() {
 
-    gForm.name= document.querySelector('#name').value;
-    gForm.phone = document.querySelector('#phone').value;
-    gForm.email = document.querySelector('#email').value;
-    gForm.contact = document.querySelector('#contact').value;
-    gForm.txt = document.querySelector('#message').value;
-    
-    saveToStorage('form', gForm);
+    var form = {
+        name:'',
+        phone:0,
+        email:'',
+        contact:'',
+        txt: ''
+    };
+
+    form.name= document.querySelector('#name').value;
+    form.phone = document.querySelector('#phone').value;
+    form.email = document.querySelector('#email').value;
+    form.contact = document.querySelector('#contact').value;
+    form.txt = document.querySelector('#message').value;
+    gForms.push(form);
+    saveToStorage('form', gForms);
 }

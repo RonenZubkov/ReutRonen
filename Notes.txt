@@ -1,0 +1,2 @@
+Admin page is unlocked.
+not fully responsive, on desktop.
