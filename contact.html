@@ -7,18 +7,13 @@
     <link rel="stylesheet" href="stylesheets/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/chal.js"></script>
+    <script src="js/general.js"></script>
     <script src="js/contactUs.js"></script>
 
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <!--<li><a href="index.html">Empty</a></li>-->
-          <!--<li><a href="about.html">Empty</a></li>-->
-          <!--<li><a href="contact.html" class="selected">Empty</a></li>-->
-        </ul>
-      </nav>
+
     </header>
     <div id="wrapper">
       <section class="primary">
@@ -49,11 +44,6 @@
             </tr>
 
             <tr>
-              <td><label for="imgFiles">Select images:</label></td>
-              <td><input type="file" id="imgFiles" class="stored" name="imgFiles" multiple /></td>
-            </tr>
-
-            <tr>
               <td><label>Message:</label></td>
               <td><textarea name="message" id="message" class="stored"></textarea></td>
             </tr>
@@ -65,15 +55,11 @@
             <option value="admin@example.com" label="Administrator" />
 
           </datalist>
-          <input type="submit" value="Register" />
-          <input type="submit" formnovalidate value="Save" />
-        </form><br />
+          <button onclick="saveForm()">Submit</button>
+        </form><br/>
       </section>
       <footer class="foot">
         cofferights &copy; 2016
-        <div class="buttonContainer" style = display:none>
-          <h3>Good job! <span><img src="img/img_game_2/trophy.png" alt=""></span></h3>
-          <button onclick="reportSolved(3)">Done</button>
         </div>
       </footer>
     </div>

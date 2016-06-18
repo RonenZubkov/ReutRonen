@@ -7018,3 +7018,6 @@ body {
 
 .footMain a {
   font-size: 4vw; }
+
+.adminTable {
+  display: flex; }
