@@ -13,12 +13,10 @@ var gLevels = [
 var gState = {
     currLevel: 0,
     hiddensDragged: 0
-    // **TODO: insted of counter in drop, add key to gState-hiddensDragged
 }
 
 function initGame2() {
     // **TODO: checking in local storage if gChals[1].isSolved  - and blocks the access tp this page       
-      
     gBoard = buildBoard(gLevels[gState.currLevel].boardSize);
     console.table(gBoard);
     renderBoard(gBoard, '.row')
@@ -33,6 +31,7 @@ function buildBoard (size) {
     }
     return board;
 }
+
 
 function renderBoard(board, selector) {
     var elContainer = document.querySelector(selector);
@@ -67,8 +66,6 @@ function renderTheHiddens() {
     elContainer.innerHTML = strHtml;
         
     $(function() {
-        // console.log(counter++)
-            // var counter = 0;
         $('.draggable').draggable({
             revert: "invalid",
             start: function(event, ui) {
@@ -86,7 +83,6 @@ function renderTheHiddens() {
                     // **TODO: create an external function
             drop: function(e) {
                     gState.hiddensDragged++;
-                    // counter++;
                     console.log(gLevels[gState.currLevel].numsToHide.length)
                     if (gLevels[gState.currLevel].numsToHide.length ===  gState.hiddensDragged) {
                         gState.currLevel++;

@@ -4,8 +4,12 @@
 var gLevels = [
             {
                 //TODO: create a function that create random quest, and levels by diffrent operators:
-            gMathQuest: [['3 + 4', '11 + 6', '8 + 2'], ['20 + 3','1 + 2', '5 + 7'], ['3+6', '2+9', '4+5']],
-            gMathAnswers: ['7', '17', '10', '23', '3', '12', '9', '11', '9']
+            // gMathQuest: [['3 + 4', '11 + 6', '8 + 2'], ['20 + 3','1 + 2', '5 + 7'], ['3+6', '2+9', '4+5']],
+            // gMathAnswers: ['7', '17', '10', '23', '3', '12', '9', '11', '9'],
+            gMathQuest: [[], [], []],            
+            gMathAnswers: [],
+            boardSize = 9,
+            //TODO: add img:
             }
 ]
 var gState = {
@@ -17,8 +21,33 @@ function initGame3() {
     // **TODO: checking in local storage if gChals[1].isSolved  - and blocks the access to this page       
 
     console.log('initGame3()')
+    createQusetAndAns ();
     renderQuests(gLevels[gState.currLevel].gMathQuest, '.questContainer')
     renderAns(gLevels[gState.currLevel].gMathAnswers, '.answerContainer')    
+}
+
+function createQusetAndAns () {
+    var rand1 = 0;
+    var rand2 = 0;
+    var ans = 0;
+    // var quests = [];
+    // var answers = [];
+    for (var i = 0; i < gLevels[gState.currLevel].boardSize; i++) {
+        
+        rand1 = parseInt(Math.random() * 9)
+        rand2 = parseInt(Math.random() * 9)
+        ans = rand1 + rand2;
+        gLevels[gState.currLevel].gMathAnswers.push (rand1 + '+' + rand2)
+        
+        for (var j = 0; j < Math.sqrt(gLevels[gState.currLevel].boardSize); j++) {
+            // var element = array[j];
+            gLevels[gState.currLevel].gMathQuest.push(ans);            
+        }
+        
+    }
+    console.log(answers)
+    console.log(quests)
+    
 }
 
 function renderQuests(arr, selector) {
