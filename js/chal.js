@@ -10,7 +10,7 @@ function init(){
     progressBar();
     
     if(gChals[gChals.length - 1].isSolved) {
-        alert('well done!')
+        alert('well done!');
     // var elCont = document.querySelector('.scene')
     // elCont.style.display = 'block'
     }
@@ -44,8 +44,7 @@ function getChals() {
             }
         ];
     }    
-    saveToStorage('chals', gChals); 
-    console.table(gChals);
+    saveToStorage('chals', gChals);
     return gChals;
 
 }
