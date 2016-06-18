@@ -4,8 +4,8 @@ var gBoard;
 var gLevels = [
             {
                 levelId: 0,
-                boardSize: 10,
-                numsToHide: [4,7],
+                boardSize: 14,
+                numsToHide: [4,7, 12],
             }
 ]
 var gState = {
@@ -47,7 +47,7 @@ function hideNums() {
     for (var i = 0; i < numsToHide.length; i++) {
         var elCell = document.querySelector('.cell_'+numsToHide[i]);  
         //TODO: create a class + clean innerText    
-        elCell.style.color = 'white';
+        elCell.style.color = 'antiquewhite';
    }
 }
 
@@ -81,6 +81,7 @@ function renderTheHiddens() {
                     },
             drop: function(e) {
                     counter++;
+                    console.log(gLevels[gState.currLevel].numsToHide.length)
                     if (gLevels[gState.currLevel].numsToHide.length === counter) {
                         // alert('!')
                         gState.currLevel++;

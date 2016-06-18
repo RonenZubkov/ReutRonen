@@ -53,7 +53,7 @@ function renderChals(chals, selector) {
                         '<a href="game' + (chal.id + 1) + '.html">'
                             +'<img src="'+getImgIsSolved(chals, chal.id) + '" class="lock">' +
                             '<h2>'+ chal.name +'</h2>' + 
-                            '</a>' +
+                        '</a>' +
                         '</div>';
         
         return strHtml;
@@ -65,7 +65,7 @@ function renderChals(chals, selector) {
 
 function getImgIsSolved (chal, chalId) {
     var imgSrc;
-      if (chal[chalId].isSolved === false) imgSrc = "img/img_index/lock.jpg";
+      if (chal[chalId].isSolved === false) imgSrc = "img/img_index/lock.png";
       else imgSrc = "img/img_index/V.png";
       return imgSrc;
   }
