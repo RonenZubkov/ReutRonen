@@ -85,7 +85,7 @@ function renderTheHiddens() {
                     if (gLevels[gState.currLevel].numsToHide.length === counter) {
                         // alert('!')
                         gState.currLevel++;
-                        $('.buttonContainer').css('display', 'block')                    
+                        // $('.buttonContainer').css('display', 'block')                    
                     };
                 }
         });
